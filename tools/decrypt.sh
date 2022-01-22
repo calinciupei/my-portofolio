@@ -1,1 +1,1 @@
-gpg --quiet --batch --yes --decrypt --passphrase="$PORTOFOLIO" --output $HOME/my-portofolio/lib/firebase/firebase-private-key.json $HOME/my-portofolio/lib/firebase/firebase-private-key.json.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$PORTOFOLIO" --output $PWD/../lib/firebase/firebase-private-key.json $PWD/../lib/firebase/firebase-private-key.json.gpg
