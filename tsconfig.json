@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./build",
+    "rootDir": "./",
+    "baseUrl": ".",
+    "strict": true,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "allowJs": true,
+    "preserveSymlinks": true
+  },
+  "include": [
+    "**/*.ts" 
+  ],
+  "exclude": [
+    "lib/**/*.test.js"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "cc-app",
+  "version": "1.0.0",
+  "description": "Server for webapp",
+  "main": "index.js",
+  "author": "Calin Ciupei",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "lib",
+    "functions"
+  ],
+  "scripts": {
+    "build": "yarn workspace @cc/lib build",
+    "build:functions": "yarn workspace @firebase/functions build",
+    "start": "yarn workspace @cc/lib start",
+    "start:local": "yarn workspace @cc/lib start:local"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
