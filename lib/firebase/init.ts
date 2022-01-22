@@ -1,7 +1,7 @@
 import { initializeApp, cert, ServiceAccount } from "firebase-admin/app";
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
 
-import serviceAccount from "./config.json";
+import serviceAccount from "./firebase-private-key.json";
 
 const config: ServiceAccount = {
   clientEmail: serviceAccount.client_email,
