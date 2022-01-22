@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "yarn workspace @cc/lib build",
+    "decrypt": "sh ./tools/decrypt_local.sh",
     "build:functions": "yarn workspace @firebase/functions build",
     "start": "yarn workspace @cc/lib start",
     "start:local": "yarn workspace @cc/lib start:local"
