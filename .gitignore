@@ -106,3 +106,4 @@ dist
 public
 .DS_Store
 firebase-private-key.json
+build
