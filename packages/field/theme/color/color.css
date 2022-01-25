@@ -1,0 +1,23 @@
+.colorContainer {
+  display: inline-block;
+  margin-bottom: var(--spacing-4);
+
+  background-color: var(--white);
+}
+
+.colorCard {
+  display: inline-block;
+  width: 100px;
+  height: 90px;
+  margin: var(--gutter-1);
+
+  border: 1px solid var(--grey-100);
+}
+
+.label {
+  text-align: center;
+}
+
+.hex {
+  color: var(--grey-600);
+}

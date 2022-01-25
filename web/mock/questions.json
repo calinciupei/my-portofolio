@@ -1,0 +1,86 @@
+[
+  {
+    "title": "You’re really busy at work and a colleague is telling you their life story and personal woes. You:",
+    "questions": [
+      {
+        "title": "Don’t dare to interrupt them",
+        "type": "INTROVERT"
+      },
+      {
+        "title": "Think it’s more important to give them some of your time; work can wait",
+        "type": "EXTROVERT"
+      },
+      {
+        "title": "Listen, but with only with half an ear",
+        "type": "INTROVERT"
+      },
+      {
+        "title": "Interrupt and explain that you are really busy at the moment",
+        "type": "EXTROVERT"
+      }
+    ]
+  },
+  {
+    "title": "You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:",
+    "questions": [
+      {
+        "title": "Look at your watch every two minutes",
+        "type": "INTROVERT"
+      },
+      {
+        "title": "Bubble with inner anger, but keep quiet",
+        "type": "EXTROVERT"
+      },
+      {
+        "title": "Explain to other equally impatient people in the room that the doctor is always running late",
+        "type": "INTROVERT"
+      },
+      {
+        "title": "Complain in a loud voice, while tapping your foot impatiently",
+        "type": "EXTROVERT"
+      }
+    ]
+  },
+  {
+    "title": "You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:",
+    "questions": [
+      {
+        "title": "Don’t dare contradict them",
+        "type": "INTROVERT"
+      },
+      {
+        "title": "Think that they are obviously right",
+        "type": "EXTROVERT"
+      },
+      {
+        "title": "Defend your own point of view, tooth and nail",
+        "type": "INTROVERT"
+      },
+      {
+        "title": "Continuously interrupt your colleague",
+        "type": "EXTROVERT"
+      }
+    ]
+  },
+  {
+    "title": "You are taking part in a guided tour of a museum. You:",
+    "questions": [
+      {
+        "title": "Are a bit too far towards the back so don’t really hear what the guide is saying",
+        "type": "EXTROVERT"
+      },
+      {
+        "title": "Follow the group without question",
+        "type": "INTROVERT"
+      },
+      {
+        "title": "Make sure that everyone is able to hear properly",
+        "type": "EXTROVERT"
+      },
+      {
+        "title": "Are right up the front, adding your own comments in a loud voice",
+        "type": "EXTROVERT"
+      }
+    ]
+  }
+]

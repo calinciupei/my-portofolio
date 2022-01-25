@@ -1,0 +1,13 @@
+.layout {
+  background-color: var(--white);
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .noScroll {
+    overflow: auto;
+  }
+}

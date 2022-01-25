@@ -1,0 +1,13 @@
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.carbon {
+  fill: var(--carbon);
+}
+
+.grey400 {
+  fill: var(--grey-400);
+}
+

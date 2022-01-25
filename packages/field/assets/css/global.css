@@ -1,0 +1,47 @@
+@import './reset.css';
+@import './colors.css';
+@import './spacing.css';
+@import './typography.css';
+@import './transition.css';
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../fonts/IBMPlexSans-Light.ttf") format("truetype");
+}
+
+:root {
+  --border-radius: 3px;
+  --border-width: 3px;
+  --header-mobile-height: 68px;
+}
+
+:global(html) {
+  font-size: 16px; /* application base font size */
+}
+
+:global(body) {
+  font-family: "IBM Plex Sans",sans-serif;
+
+  line-height: var(--line-height-5);
+
+  background-color: var(--grey-900);
+}
+
+:global(html, body, #root) {
+  height: 100%;
+}
+
+:global(#root) {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--blue-600);
+
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

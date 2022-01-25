@@ -1,0 +1,21 @@
+{
+  "name": "@crew/router",
+  "version": "1.0.0",
+  "description": "Star Wars API universal router",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "history": "^5.0.0",
+    "react": "^17.0.0",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "universal-router": "^9.0.1"
+  },
+  "devDependencies": {
+    "@crew/web": "1.0.0",
+    "@types/history": "^4.7.7",
+    "@types/react": "^17.0.0",
+    "@types/react-redux": "^7.1.9",
+    "@types/redux": "^3.6.0"
+  }
+}

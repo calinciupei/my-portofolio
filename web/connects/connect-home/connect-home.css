@@ -1,0 +1,5 @@
+.main {
+  margin: 0 auto;
+  padding: var(--header-height);
+  background-color: var(--blue-50);
+}

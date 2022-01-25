@@ -1,0 +1,22 @@
+{
+  "name": "@crew/store",
+  "version": "1.0.0",
+  "description": "Store for Test",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest -i --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "jest-dom": "^4.0.0",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0"
+  },
+  "dependencies": {
+    "@crew/types": "1.0.0"
+  }
+}

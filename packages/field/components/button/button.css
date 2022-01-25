@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--spacing-2);
+  background: transparent;
+  border-radius: var(--border-radius);
+  outline: 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.primary {
+  color: var(--white);
+  background-color: var(--blue-dark);
+  border-color: transparent;
+}
+
+.primary:hover {
+  background-color: var(--blue-300);
+}
+
+.large {
+  width: 100%;
+}
+
+.primary:active {
+  background-color: var(--blue-100);
+}

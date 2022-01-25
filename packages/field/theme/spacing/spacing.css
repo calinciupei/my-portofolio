@@ -1,0 +1,26 @@
+.spacingContainer {
+  width: 50%;
+
+  color: var(--grey-500);
+
+  text-align: center;
+
+  background-color: var(--white);
+  border: 2px solid var(--grey-500);
+}
+
+.header {
+  height: 60px;
+
+  color: var(--blue);
+}
+
+.row {
+  height: 60px;
+}
+
+.example {
+  margin: 0 auto;
+
+  background-color: var(--black);
+}

@@ -1,0 +1,65 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-declaration-use-variable",
+    "stylelint-color-no-non-variables",
+    "stylelint-no-unused-selectors",
+    "stylelint-value-no-unknown-custom-properties"
+  ],
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-empty-line-before": null,
+    "declaration-property-value-whitelist": {
+      "opacity": ["0", "1"]
+    },
+    "dczajkowski/color-no-non-variables": true,
+    "order/properties-order": [],
+    "color-named": "never",
+    "sh-waqar/declaration-use-variable": [
+      [
+        "background-color",
+        "color",
+        "fill",
+        "font-size",
+        "line-height",
+        "margin",
+        "margin-left",
+        "margin-right",
+        "margin-top",
+        "margin-bottom",
+        {
+          "ignoreValues": [
+            "/0/",
+            "transparent",
+            "auto"
+          ]
+        }
+      ]
+    ],
+    "plugin/no-unused-selectors": true,
+    "plugin/rational-order": [
+      true, 
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": false
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes", "compose-with"]
+      }
+    ],
+    "property-blacklist": ["font-size", "font-weight", "line-height"],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["export", "import", "global", "local", "external"]
+      }
+    ]
+  }
+}

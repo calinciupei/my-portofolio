@@ -8,11 +8,15 @@
   "private": true,
   "workspaces": [
     "lib",
-    "functions"
+    "functions",
+    "web",
+    "packages/**"
   ],
   "scripts": {
-    "build": "yarn workspace @cc/lib build",
+    "build": "yarn build:functions && yarn build:client",
     "decrypt": "sh ./tools/decrypt_local.sh",
+    "build:client": "yarn workspace @crew/web build",
+    "build:lib": "yarn workspace @cc/lib build",
     "build:functions": "yarn workspace @firebase/functions build",
     "start": "yarn workspace @cc/lib start",
     "start:local": "yarn workspace @cc/lib start:local",
@@ -25,5 +29,23 @@
     "lerna": "^4.0.0",
     "typescript": "^4.5.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jasmine": "^4.1.3",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-no-only-tests": "^2.6.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3"
+  }
 }
