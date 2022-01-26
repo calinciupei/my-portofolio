@@ -9,10 +9,12 @@ type Actions = PushAction;
 const routingActionTypes = [PUSH];
 
 export const urlMiddleware: Middleware = () => (next: Dispatch<Actions>) => (action: Actions) => {
+  let url;
+
   if (routingActionTypes.includes(action.type) && history) {
     switch (action.type) {
       case PUSH:
-        const url = `${baseHref}${action.payload.currentRoute}`.replace("//", "/");
+        url = `${baseHref}${action.payload.currentRoute}`.replace("//", "/");
 
         if (url !== window.location.pathname) {
           history.push(url, action.payload);

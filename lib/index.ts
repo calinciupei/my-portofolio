@@ -3,7 +3,6 @@ import { app } from "./controller";
 const PORT = process.env.PORT || 9999;
 
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
   console.log(`Liste on port ${PORT}`);
 });
 
@@ -17,6 +16,5 @@ app.listen(PORT, () => {
 //     app,
 //   )
 //   .listen(PORT, () => {
-//     // eslint-disable-next-line no-console
 //     console.log(`Liste on port ${PORT}`);
 //   });

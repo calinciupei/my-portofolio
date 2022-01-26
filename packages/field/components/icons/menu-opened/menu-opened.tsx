@@ -1,11 +1,26 @@
+import classNames from "classnames";
 import React, { FunctionComponent } from "react";
 
 import styles from "./menu-opened.css";
 
-export const MenuOpened: FunctionComponent = () => {
+export enum MenuOpenedColor {
+  white = "white",
+  carbon = "carbon"
+}
+
+export type MenuOpenedProps = {
+  color?: MenuOpenedColor;
+};
+
+export const MenuOpened: FunctionComponent<MenuOpenedProps> = ({ color }) => {
+  const classes = classNames(styles.menuOpened, {
+    [styles.white]: color === MenuOpenedColor.white,
+    [styles.carbon]: color === MenuOpenedColor.carbon
+  });
+
   return (
-    <svg className={styles.menuOpened} viewBox="0 0 20 20" width="24" height="24">
-      <path d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+    <svg className={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+      <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
     </svg>
   );
 };

@@ -1,4 +1,3 @@
-import { OrderState } from "./entities/order";
 import { Layout } from "./layout-state";
 
 export type PageState = {
@@ -9,12 +8,11 @@ export type PageState = {
 export type RouterState = {
   currentRoute: string;
   page?: PageState | null;
-  path?: string;
+  path: string;
 };
 
 export type InitialState = {
   router: RouterState;
   page: PageState;
   layout: Layout;
-  orders: OrderState;
 };

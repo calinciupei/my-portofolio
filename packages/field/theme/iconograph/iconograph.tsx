@@ -9,7 +9,7 @@ const catalogue = [
   <Icons.MenuOpened key="MenuOpened" />,
   <Icons.Arrow key="Un-Lock" />,
   <Icons.Facebook key="Facebook" color={Icons.FacebookColor.carbon} />,
-  <Icons.Instagram key="Instagram" color={Icons.InstagramColor.carbon} />,
+  <Icons.Instagram key="Instagram" color={Icons.InstagramColor.Carbon} />,
   <Icons.Linkedin key="Linkedin" color={Icons.LinkedinColor.carbon} />,
   <Icons.Twitter key="Twitter" color={Icons.TwitterColor.carbon} />,
   <Icons.Youtube key="Youtube" color={Icons.YoutubeColor.carbon} />,
@@ -17,7 +17,8 @@ const catalogue = [
   <Icons.At key="At" color={Icons.AtColor.carbon} />,
   <Icons.Clock key="Clock" color={Icons.ClockColor.carbon} />,
   <Icons.Chevron key="Clock" color={Icons.ChevronColor.carbon} />,
-  <Icons.MapMarker key="Clock" color={Icons.MapMarkerColor.carbon} />
+  <Icons.MapMarker key="Clock" color={Icons.MapMarkerColor.carbon} />,
+  <Icons.Github key="Github" color={Icons.GithubColor.Carbon} />
 ];
 
 const Iconograph: FunctionComponent = () => (

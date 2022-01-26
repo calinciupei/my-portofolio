@@ -7,12 +7,9 @@ export type LayoutProps = {
   isMenuOpen: boolean;
 };
 
-export const Layout: FunctionComponent<LayoutProps> = ({
-  children,
-  isMenuOpen,
-}) => {
+export const Layout: FunctionComponent<LayoutProps> = ({ children, isMenuOpen }) => {
   const classStyles = classnames(styles.layout, {
-    [styles.noScroll]: isMenuOpen,
+    [styles.noScroll]: isMenuOpen
   });
 
   document.body.classList.remove(styles.noScroll);

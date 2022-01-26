@@ -7,14 +7,14 @@ import { getCurrentPath } from "@crew/store/store-selectors/routes";
 import { PAGE_NAMES } from "../../config/routing";
 
 export type ConnectHelmetProps = {
-  path?: string;
+  path: string;
 };
 
 function mapStateProps(state: InitialState): ConnectHelmetProps {
   const path = getCurrentPath(state);
 
   return {
-    path,
+    path
   };
 }
 

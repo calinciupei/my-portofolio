@@ -10,9 +10,8 @@ import "../../assets/css/global.css";
 
 const ConnectHelmet = React.lazy(
   () =>
-    import(
-      /* webpackChunkName: "helmet-connect" */ "../connect-helmet/connect-helmet"
-    )
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    import(/* webpackChunkName: "helmet-connect" */ "../connect-helmet/connect-helmet")
 );
 
 export type ConnectAppProps = {
@@ -23,7 +22,7 @@ function mapStateProps(state: InitialState): ConnectAppProps {
   const path = getCurrentRoute(state);
 
   return {
-    currentRoute: path,
+    currentRoute: path
   };
 }
 
@@ -38,20 +37,24 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute }) => {
           type: PUSH,
           payload: {
             currentRoute: window.location.pathname,
-            path: window.location.pathname,
-          },
+            path: window.location.pathname
+          }
         });
       }
     }
 
     function resolve(): void {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
       const router = buildRouter();
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
       const result = router.resolve({
-        pathname: currentRoute,
+        pathname: currentRoute
       });
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
       result.then((item) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setView(item);
       });
     }

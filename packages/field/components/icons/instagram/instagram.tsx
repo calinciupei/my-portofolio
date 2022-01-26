@@ -4,8 +4,8 @@ import classnames from "classnames";
 import styles from "./instagram.css";
 
 export enum InstagramColor {
-  carbon = "Carbon",
-  grey400 = "Grey400"
+  Carbon = "Carbon",
+  Grey400 = "Grey400"
 }
 
 export type InstagramProps = {
@@ -14,8 +14,8 @@ export type InstagramProps = {
 
 export const Instagram: FunctionComponent<InstagramProps> = ({ color }) => {
   const styleClass = classnames(styles.icon, {
-    [styles.carbon]: InstagramColor.carbon === color,
-    [styles.grey400]: InstagramColor.grey400 === color
+    [styles.carbon]: InstagramColor.Carbon === color,
+    [styles.grey400]: InstagramColor.Grey400 === color
   });
 
   return (

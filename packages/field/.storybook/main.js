@@ -8,9 +8,12 @@ module.exports = {
   addons: [
     "@storybook/addon-a11y",
     "@storybook/addon-actions",
+    "@storybook/addon-docs",
     "@storybook/addon-knobs",
-    "@storybook/addon-options",
-    "@storybook/addon-viewport"
+    "@storybook/addon-viewport",
+    "@storybook/addon-postcss",
+    "storybook-dark-mode",
+    "@storybook/addon-options"
   ],
   webpackFinal: async (config) => {
     return { ...config, module: { ...config.module, rules: custom.module.rules } };

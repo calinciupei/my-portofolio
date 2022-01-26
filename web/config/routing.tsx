@@ -1,19 +1,19 @@
-import React, { Suspense } from "react";
+import React, { ComponentType, ReactNode, Suspense } from "react";
 import UniversalRouter from "universal-router";
 
 export const ROUTES = {
-  HOME: "/",
+  HOME: "/"
 };
 
 export const PAGE_NAMES = {
-  [ROUTES.HOME]: "Home",
+  [ROUTES.HOME]: "Home"
 };
 
 const Home = React.lazy(
   () =>
-    import(
-      /* webpackChunkName: "home-page" */ "../connects/connect-home/connect-home"
-    )
+    import(/* webpackChunkName: "home-page" */ "../connects/connect-home/connect-home") as Promise<{
+      default: ComponentType<ReactNode>;
+    }>
 );
 
 const buildRouter = (): UniversalRouter =>
@@ -27,13 +27,13 @@ const buildRouter = (): UniversalRouter =>
               <Home />
             </Suspense>
           );
-        },
-      },
+        }
+      }
     ],
     {
       errorHandler() {
         return <>Oops! Something went wrong</>;
-      },
+      }
     }
   );
 

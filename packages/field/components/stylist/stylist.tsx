@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Provider as StyletronProvider } from "styletron-react";
 import { LightTheme, BaseProvider } from "baseui";
@@ -6,7 +6,7 @@ import { LightTheme, BaseProvider } from "baseui";
 import "../../assets/css/global.css";
 
 export type StylistProps = {
-  children: any;
+  children: ReactNode;
 };
 
 const engine = new Styletron();

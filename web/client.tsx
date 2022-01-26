@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// ts-ignore
 import React, { FunctionComponent } from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
@@ -13,26 +15,29 @@ i18next.init({
   fallbackLng: "ne",
   resources: {
     en: {
-      translation: translationsEn,
-    },
+      translation: translationsEn
+    }
   },
   keySeparator: false,
-  interpolation: { escapeValue: false },
+  interpolation: { escapeValue: false }
 });
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 let App = require("./connects/connect-app/connect-app").default;
 
 // Grab the state from a global variable injected into the server-generated HTML
+// @ts-expect-error
 const preloadedState = { ...window.__PRELOADED_STATE__ };
 
 // Allow the passed state to be garbage-collected
+// @ts-expect-error
 delete window.__PRELOADED_STATE__;
 
 const STORE: StoreOptions = {
   preloadedState,
+  // @ts-expect-error
   compose: window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__,
-  middleware: [urlMiddleware],
+  middleware: [urlMiddleware]
 };
 
 const store = createStore(ENDPOINTS, STORE);
@@ -48,7 +53,9 @@ const Root: FunctionComponent = () => (
 
 render(<Root />, rootElement);
 
+// @ts-expect-error
 if (module.hot) {
+  // @ts-expect-error
   module.hot.accept("./connects/connect-app/connect-app", (): void => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     App = require("./connects/connect-app/connect-app").default;

@@ -1,4 +1,4 @@
-const jestShared = import("../../jest.share.config");
+const jestShared = require("../../jest.share.config");
 
 module.exports = Object.assign(jestShared, {
   testMatch: ["./**/?(*.)+(test).[jt]s?(x)"],
@@ -12,6 +12,5 @@ module.exports = Object.assign(jestShared, {
     "ts-jest": {
       tsconfig: "tsconfig.json"
     }
-  },
-  setupFiles: ["../../test-setup.js"]
+  }
 })

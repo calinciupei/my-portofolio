@@ -3,9 +3,7 @@ import { Listener } from "history";
 import history from "./history";
 import { PUSH, PushAction } from "@crew/store/actions/router";
 
-export const historyListener = (
-  dispatch: Dispatch<PushAction>
-): Listener | null => {
+export const historyListener = (dispatch: Dispatch<PushAction>): Listener | null => {
   if (!history) return null;
 
   history.push(history.location.pathname);
@@ -14,7 +12,7 @@ export const historyListener = (
     if (action === "POP") {
       dispatch({
         type: PUSH,
-        payload: { currentRoute: location.pathname },
+        payload: { currentRoute: location.pathname }
       });
     }
   });

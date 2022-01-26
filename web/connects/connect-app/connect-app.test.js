@@ -9,9 +9,7 @@ const dispatchMock = jest.fn();
 const resolveMock = jest.fn();
 
 jest.mock("@crew/store", () => jest.fn(() => {}));
-jest.mock("../connect-helmet/connect-helmet", () =>
-  jest.fn(() => <connect-helmet />)
-);
+jest.mock("../connect-helmet/connect-helmet", () => jest.fn(() => <connect-helmet />));
 jest.mock("react-redux", () => {
   const connectMock = jest.fn().mockReturnValue((component) => component);
   const useDispatchMock = () => dispatchMock;
@@ -20,12 +18,12 @@ jest.mock("react-redux", () => {
 });
 jest.mock("../../config/routing", () => {
   jest.fn(() => ({
-    resolve: resolveMock,
+    resolve: resolveMock
   }));
 });
 jest.mock("@crew/store/store-selectors/routes", () => {
   return {
-    getCurrentRoute: jest.fn(),
+    getCurrentRoute: jest.fn()
   };
 });
 

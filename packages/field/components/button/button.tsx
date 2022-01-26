@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useCallback } from "react";
+import React, { FunctionComponent, MouseEvent, useCallback } from "react";
 import classnames from "classnames";
 
 import styles from "./button.css";
@@ -6,15 +6,15 @@ import styles from "./button.css";
 export type ButtonOnClick = (event: MouseEvent) => void;
 
 export enum ButtonVariant {
-  PRIMARY = "primary",
+  PRIMARY = "primary"
 }
 
 export enum ButtonWidth {
-  LARGE = "large",
+  LARGE = "large"
 }
 
 export enum ButtonType {
-  SUBMIT = "submit",
+  SUBMIT = "submit"
 }
 
 export type ButtonProps = {
@@ -24,20 +24,15 @@ export type ButtonProps = {
   type?: ButtonType;
 };
 
-export const Button: FunctionComponent<ButtonProps> = ({
-  children,
-  onClick,
-  variant,
-  width,
-}) => {
+export const Button: FunctionComponent<ButtonProps> = ({ children, onClick, variant, width }) => {
   const stylesClass = classnames(styles.button, {
     [styles.primary]: variant === ButtonVariant.PRIMARY,
     [styles.large]: width === ButtonWidth.LARGE,
-    "typography-h320": true,
+    "typography-h320": true
   });
 
   const handleClick = useCallback(
-    (event) => {
+    (event: MouseEvent) => {
       if (onClick) {
         onClick(event);
       }

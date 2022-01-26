@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import HttpException from "../common/http-exception";
 import { Request, Response, NextFunction } from "express";
 

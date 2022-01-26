@@ -1,18 +1,24 @@
-{
+module.exports = {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
     "sourceType": "module",
+    "tsconfigRootDir": __dirname,
+    "project": [
+      "./tsconfig.json",
+      "./packages/**/tsconfig.json",
+      "./web/tsconfig.json"
+    ],
     "ecmaFeatures": {
       "jsx": true
     }
   },
-  "plugins": ["react-hooks", "no-only-tests", "jasmine", "jest", "filenames"],
+  "plugins": ["react-hooks", "no-only-tests", "jasmine", "jest", "filenames", "@typescript-eslint", "prettier"],
   "extends": [
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "env": {
     "browser": true
@@ -20,19 +26,10 @@
   "settings": {
     "react": {
       "version": "detect"
-    },
-    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
     }
   },
   "rules": {
-    "filenames/match-regex": [1, "^([a-z][a-z0-9]*)(-[a-z0-9]+)*(.test|.spec)?$", true],
+    "filenames/match-regex": [1, "^([a-z][a-z0-9]*)(-[a-z0-9]+)*(.test|.spec|.stories)?$", true],
     "import/named": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
@@ -52,23 +49,15 @@
     "no-console": "error",
     "no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
     "@typescript-eslint/no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
-    "@typescript-eslint/camelcase": [0]
+    "@typescript-eslint/camelcase": [0],
+    "indent": [2, 2, { SwitchCase: 1}],
+    "prettier/prettier": "error",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
   },
   "overrides": [
     {
-      "files": [
-        "src/**/*.js",
-        "packages/field/**/*.tsx",
-        "packages/field/**/**/*.tsx",
-        "packages/field/**/*.jsx",
-        "webpack/*.js"
-      ],
-      "rules": {
-        "filenames/match-regex": [0, "^[A-Z][a-z]+(?:[A-Z][a-z]+)*(.test)?(.selectors)?(.stories)?(.component)?(.container)?$", true]
-      }
-    },
-    {
-      "files": ["**/*.test.js", "**/*.test.ts"],
+      "files": ["**/*.test.js?(x)", "**/*.test.ts"],
       "env": {
         "jest": true
       },
@@ -79,7 +68,7 @@
       }
     },
     {
-      "files": ["**/jest.config.js"],
+      "files": ["**/jest.config.js", ""],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
         "no-console": "off"

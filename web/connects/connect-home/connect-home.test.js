@@ -35,7 +35,7 @@ function setupMapStateToProps(state) {
 describe("connect app component", () => {
   describe("set mapStateToPros", () => {
     const stateMock = {
-      currentRoute: "/",
+      currentRoute: "/"
     };
 
     it("should return the current route", () => {
