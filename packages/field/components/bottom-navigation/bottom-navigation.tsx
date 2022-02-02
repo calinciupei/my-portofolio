@@ -18,7 +18,23 @@ const {
   MenuOpenedColor
 } = Icons;
 
-export const BottomNavigation: FunctionComponent = () => {
+export type MenuClick = (isOpened: boolean) => void;
+
+export type BottomNavigationProps = {
+  instagram: string;
+  linkedin: string;
+  twitter: string;
+  github: string;
+  onClick?: MenuClick;
+};
+
+export const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
+  instagram,
+  linkedin,
+  twitter,
+  github,
+  onClick
+}) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const renderButton = (): JSX.Element => {
@@ -27,16 +43,23 @@ export const BottomNavigation: FunctionComponent = () => {
 
   const handleMenuClick = useCallback(() => {
     setIsOpened(!isOpened);
-  }, [isOpened]);
+    if (onClick) {
+      onClick(isOpened);
+    }
+  }, [isOpened, onClick]);
 
   return (
     <div className={styles.menu}>
       <ul className={styles.list}>
         <li>
-          <Instagram color={InstagramColor.Carbon} />
+          <a className={styles.link} href={instagram} target="_blank" rel="noreferrer">
+            <Instagram color={InstagramColor.Carbon} />
+          </a>
         </li>
         <li>
-          <Linkedin color={LinkedinColor.carbon} />
+          <a className={styles.link} href={linkedin} target="_blank" rel="noreferrer">
+            <Linkedin color={LinkedinColor.carbon} />
+          </a>
         </li>
         <li className={styles.menuItem}>
           <button onClick={handleMenuClick} className={styles.button}>
@@ -44,10 +67,14 @@ export const BottomNavigation: FunctionComponent = () => {
           </button>
         </li>
         <li>
-          <Twitter color={TwitterColor.carbon} />
+          <a className={styles.link} href={twitter} target="_blank" rel="noreferrer">
+            <Twitter color={TwitterColor.carbon} />
+          </a>
         </li>
         <li>
-          <Github color={GithubColor.Carbon} />
+          <a className={styles.link} href={github} target="_blank" rel="noreferrer">
+            <Github color={GithubColor.Carbon} />
+          </a>
         </li>
       </ul>
     </div>

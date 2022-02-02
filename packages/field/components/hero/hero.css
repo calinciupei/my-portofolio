@@ -1,0 +1,96 @@
+.hero {
+  padding: var(--spacing-4);
+
+  text-align: center;
+}
+
+.item {
+  margin-bottom: var(--spacing-4);
+}
+
+.media {
+  display: block;
+
+  max-width: 340px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.content {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: var(--spacing-10);
+}
+
+.content p {
+  margin-bottom: var(--spacing-4);
+}
+
+.image {
+  max-width: 100%;
+}
+
+.animation {
+  opacity: 0;
+
+  animation-name: fade-in-up;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.pp {
+  color: var(--green);
+}
+
+.bf {
+  color: var(--yellow)
+}
+
+@media screen and (min-width: 1280px) {
+  .hero {
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .image, .media {
+    max-width: 340px;
+  }
+
+  .media {
+    margin-right: var(--spacing-35);
+  }
+
+  .content {
+    max-width: 600px;
+
+    text-align: left;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+      transform: translate3d(0,60px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+      transform: translate3d(0,60px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
+}

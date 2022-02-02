@@ -3,7 +3,7 @@ import React from "react";
 import { addParameters, addDecorator } from '@storybook/react';
 import { withA11y } from "@storybook/addon-a11y"
 import { themes } from "@storybook/theming";
-import { Stylist } from "../components/Stylist/Stylist";
+import { Stylist } from "../components/stylist/stylist";
 
 addDecorator(story => {
   return (

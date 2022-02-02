@@ -1,12 +1,14 @@
-import React, { FunctionComponent, Suspense, useEffect, useState } from "react";
+import React, { FunctionComponent, Suspense, useCallback, useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { InitialState } from "@crew/types";
 import { getCurrentRoute } from "@crew/store/store-selectors/routes";
 import { PUSH, PushAction } from "@crew/store/actions/router";
-import { Stylist } from "@crew/field";
+import { FullScreenNavigation, Stylist } from "@crew/field";
 import buildRouter from "../../config/routing";
+import { BottomNavigation, BottomNavigationProps } from "@crew/field";
 
 import "../../assets/css/global.css";
+import styles from "./connect-app.css";
 
 const ConnectHelmet = React.lazy(
   () =>
@@ -16,19 +18,29 @@ const ConnectHelmet = React.lazy(
 
 export type ConnectAppProps = {
   currentRoute: string;
+  bottomNavigation: BottomNavigationProps;
 };
 
 function mapStateProps(state: InitialState): ConnectAppProps {
   const path = getCurrentRoute(state);
 
+  const bottomNavigation = (): BottomNavigationProps => ({
+    github: "https://github.com/calinciupei",
+    instagram: "",
+    linkedin: "",
+    twitter: ""
+  });
+
   return {
-    currentRoute: path
+    currentRoute: path,
+    bottomNavigation: { ...bottomNavigation() }
   };
 }
 
-const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute }) => {
+const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute, bottomNavigation }) => {
   const dispatch = useDispatch();
   const [view, setView] = useState();
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   useEffect(() => {
     if (!currentRoute) {
@@ -62,13 +74,23 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute }) => {
     if (currentRoute) resolve();
   }, [currentRoute, dispatch]);
 
+  const handleMenuClick = useCallback((isOpened) => {
+    setIsMenuOpened(!isOpened);
+  }, []);
+
   return (
     <Stylist>
       <Suspense fallback={<></>}>
         <ConnectHelmet />
       </Suspense>
 
+      <FullScreenNavigation isOpened={isMenuOpened} />
+
       {view}
+
+      <div className={styles.menu}>
+        <BottomNavigation {...bottomNavigation} onClick={handleMenuClick} />
+      </div>
     </Stylist>
   );
 };

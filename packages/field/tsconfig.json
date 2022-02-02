@@ -16,7 +16,7 @@
     "types": ["node"],
     "lib": ["dom", "es2017", "ESNext.Intl"]
   },
-  "include": ["**/*.ts*", "**/*.test.js"],
+  "include": ["**/*.ts*", "**/*.test.js", "custom-typings.d.ts"],
   "exclude": [
     "**/*.test.ts"
   ]

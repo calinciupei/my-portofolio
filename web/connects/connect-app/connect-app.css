@@ -1,0 +1,17 @@
+.menu {
+  position: fixed;
+  bottom: 0;
+
+  display: none;
+  justify-content: center;
+
+  width: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+  .menu {
+    z-index: 1;
+
+    display: flex;
+  }
+}

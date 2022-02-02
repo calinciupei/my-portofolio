@@ -18,7 +18,21 @@ const catalogue = [
   <Icons.Clock key="Clock" color={Icons.ClockColor.carbon} />,
   <Icons.Chevron key="Clock" color={Icons.ChevronColor.carbon} />,
   <Icons.MapMarker key="Clock" color={Icons.MapMarkerColor.carbon} />,
-  <Icons.Github key="Github" color={Icons.GithubColor.Carbon} />
+  <Icons.Github key="Github" color={Icons.GithubColor.Carbon} />,
+  <Icons.ReactIcon key="ReactIcon" color={Icons.ReactColor.Carbon} />,
+  <Icons.Angular key="Angular" color={Icons.AngularColor.Carbon} />,
+  <Icons.Javascript key="Javascript" color={Icons.JavascriptColor.Carbon} />,
+  <Icons.Css key="Css3" color={Icons.CssColor.Carbon} />,
+  <Icons.Html5 key="Html5" color={Icons.Html5Color.Carbon} />,
+  <Icons.Typescript key="Typescript" color={Icons.TypescriptColor.Carbon} />,
+  <Icons.Redux key="Redux" color={Icons.ReduxColor.Carbon} />,
+  <Icons.ReduxSaga key="ReduxSaga" color={Icons.ReduxSagaColor.Carbon} />,
+  <Icons.Firebase key="Firebase" color={Icons.FirebaseColor.Carbon} />,
+  <Icons.Jenkins key="Jenkins" color={Icons.JenkinsColor.Carbon} />,
+  <Icons.Node key="Node" color={Icons.NodeColor.Carbon} />,
+  <Icons.Express key="express" color={Icons.ExpressColor.Carbon} />,
+  <Icons.Jest key="Jest" color={Icons.JestColor.Carbon} />,
+  <Icons.Graphql key="Graphql" color={Icons.GraphqlColor.Carbon} />
 ];
 
 const Iconograph: FunctionComponent = () => (

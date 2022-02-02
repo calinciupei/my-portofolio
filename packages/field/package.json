@@ -60,6 +60,7 @@
     "eslint-plugin-jasmine": "^4.1.3",
     "eslint-plugin-jest": "^26.0.0",
     "eslint-plugin-no-only-tests": "^2.6.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.1.1",
     "jest-css-modules-processor": "^0.0.9",
