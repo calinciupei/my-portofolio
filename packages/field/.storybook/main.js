@@ -13,7 +13,8 @@ module.exports = {
     "@storybook/addon-viewport",
     "@storybook/addon-postcss",
     "storybook-dark-mode",
-    "@storybook/addon-options"
+    "@storybook/addon-options",
+    "@storybook/addon-controls"
   ],
   webpackFinal: async (config) => {
     return { ...config, module: { ...config.module, rules: custom.module.rules } };

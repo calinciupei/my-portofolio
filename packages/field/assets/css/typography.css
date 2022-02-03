@@ -297,6 +297,12 @@
   line-height: var(--line-height-10);
 }
 
+:global(.typography-h916) {
+  font-weight: var(--text-weight-extrabold);
+  font-size: var(--text-size-15);
+  line-height: var(--line-height-15);
+}
+
 :global(.typography-h091) {
   font-weight: var(--text-weight-regular);
   font-size: var(--text-size-9);
@@ -309,7 +315,7 @@
   line-height: var(--line-height-1);
 }
 
-/* titel page */
+/* title page */
 :global(.typography-title-page) {
   font-weight: var(--text-weight-semibold);
   font-size: var(--text-size-7);

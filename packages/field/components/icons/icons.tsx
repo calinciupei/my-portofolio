@@ -27,6 +27,7 @@ import { Node, NodeColor } from "./node/node";
 import { Express, ExpressColor } from "./express/express";
 import { Jest, JestColor } from "./jest/jest";
 import { Graphql, GraphqlColor } from "./graphql/graphql";
+import { Sass, SassColor } from "./sass/sass";
 
 export const Icons = {
   Lock,
@@ -86,5 +87,7 @@ export const Icons = {
   Jest,
   JestColor,
   Graphql,
-  GraphqlColor
+  GraphqlColor,
+  Sass,
+  SassColor
 };

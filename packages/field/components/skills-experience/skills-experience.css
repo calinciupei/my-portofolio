@@ -1,3 +1,58 @@
-.main {
-  color: var(--carbon);
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: var(--spacing-10);
+
+  color: var(--blue-300);
+}
+
+.content p {
+  margin-bottom: var(--spacing-4);
+}
+
+.box {
+  opacity: 0;
+
+  animation-name: bounce;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  width: 48px ;
+
+  margin: var(--spacing-1);
+
+  opacity: 0;
+}
+
+.icon:not(:last-child) {
+  margin-right: var(--spacing-5);
+}
+
+.link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes bounce {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

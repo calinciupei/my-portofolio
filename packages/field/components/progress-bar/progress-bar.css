@@ -1,0 +1,7 @@
+.label {
+  margin-right: var(--spacing-4);
+}
+
+.item {
+  width: auto;
+}
