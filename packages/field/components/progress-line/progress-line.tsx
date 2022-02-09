@@ -3,7 +3,7 @@ import { Colors } from "baseui/theme";
 import { ProgressBar } from "baseui/progress-bar";
 import { useInterval } from "../../hooks/use-interval";
 
-import styles from "./progress-bar.css";
+import styles from "./progress-line.css";
 
 export enum ProgressColor {
   Blue = "blue",

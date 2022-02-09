@@ -12,7 +12,7 @@ export default {
 
 const handleClick = actions({ onClick: "hero clicked" }) as unknown as HeroClick;
 
-export const desktop: ComponentStory<typeof Hero> = () => (
+export const base: ComponentStory<typeof Hero> = () => (
   <div
     style={{
       backgroundColor: "white",

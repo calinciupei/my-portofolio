@@ -20,7 +20,7 @@ module.exports = function () {
       extensions: [".ts", ".tsx", ".js", ".json"]
     },
     devServer: {
-      // progress: true,
+      progress: true,
       contentBase: "dist",
       hot: true,
       port: 9001,

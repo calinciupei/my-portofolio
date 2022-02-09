@@ -1,6 +1,15 @@
 .main {
-  margin: 0 auto;
-  padding: var(--header-height);
+  width: 100%;
 
-  background-color: var(--blue-50);
+  height: 100%;
+}
+
+.section {
+  display: flex;
+
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  height: 90%;
+  margin: 0 auto;
 }

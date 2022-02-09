@@ -12,7 +12,7 @@ export const historyListener = (dispatch: Dispatch<PushAction>): Listener | null
     if (action === "POP") {
       dispatch({
         type: PUSH,
-        payload: { currentRoute: location.pathname }
+        payload: { currentRoute: location.pathname, path: location.pathname }
       });
     }
   });

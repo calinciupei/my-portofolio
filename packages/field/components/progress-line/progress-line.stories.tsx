@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ProgressColor, ProgressLine } from "./progress-bar";
+import { ProgressColor, ProgressLine } from "./progress-line";
 
 export default {
   title: "components/progress-line",

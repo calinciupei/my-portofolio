@@ -4,6 +4,7 @@ import { StatefulTooltip } from "baseui/tooltip";
 import { Icons } from "../icons/icons";
 
 import styles from "./skills-experience.css";
+import { ProgressColor, ProgressLine } from "../progress-line/progress-line";
 
 export enum IconsType {
   Html5 = "html5",
@@ -82,13 +83,17 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = () => 
   const classes = classnames(styles.skills);
   let defaultDelay = 0;
 
-  const animationDelay = (delay?: number): string => {
+  const animationDelay = (delay?: number): number => {
     if (delay) {
-      return `${delay}ms`;
+      return delay;
     }
 
-    defaultDelay += 250;
-    return `${defaultDelay}ms`;
+    defaultDelay += 150;
+    return defaultDelay;
+  };
+
+  const getDelay = (): string => {
+    return `${animationDelay()}ms`;
   };
 
   const renderIcon = (icon: IconsType): JSX.Element => {
@@ -147,7 +152,7 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = () => 
     return (
       <>
         {iconsContent.map(({ title, icon, url }) => (
-          <div key={icon} className={`${styles.icon} ${styles.box}`} style={{ animationDelay: animationDelay() }}>
+          <div key={icon} className={`${styles.icon} ${styles.box}`} style={{ animationDelay: getDelay() }}>
             <StatefulTooltip content={() => title} placement="bottom" showArrow returnFocus>
               <a href={url} target={"_blank"} rel="noreferrer" className={styles.link}>
                 {renderIcon(icon)}
@@ -161,21 +166,22 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = () => 
 
   return (
     <div className={classes}>
-      <div>
-        <div className={`typography-h916 ${styles.title} ${styles.box}`} style={{ animationDelay: animationDelay() }}>
+      <div className={styles.first}>
+        <div className={`typography-h916 ${styles.title} ${styles.box}`} style={{ animationDelay: getDelay() }}>
           Tools & <br /> Experience
         </div>
-        <div className={styles.content}>
-          <p className={styles.box} style={{ animationDelay: animationDelay() }}>
+
+        <div className={`${styles.content}`}>
+          <p className={styles.box} style={{ animationDelay: getDelay() }}>
             My passion to create things that contributed with a very minuscular portion to the vast space of the
             internet started in high school by hacking and building my first website that represented my school.
           </p>
-          <p className={styles.box} style={{ animationDelay: animationDelay() }}>
+          <p className={styles.box} style={{ animationDelay: getDelay() }}>
             Fast-forward to today, I&apos;ve did remote work for huge corporations, advertising agencies, consulted
             startup companies, and had the privilege of working with talented people to create web products for consumer
             use and business
           </p>
-          <p className={styles.box} style={{ animationDelay: animationDelay() }}>
+          <p className={styles.box} style={{ animationDelay: getDelay() }}>
             The main area of my expertise is front-end development, building scalable web apps, custom libraries,
             animations, and interactive responsive layouts. I want to mention first I&apos;ve started as a full-stack
             developer and working with popular open-source frameworks like Express, Fastyify, Gatsby, and NEXT.
@@ -184,6 +190,12 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = () => 
       </div>
 
       <div>
+        <div className={`${styles.box} ${styles.progresses}`} style={{ animationDelay: getDelay() }}>
+          <ProgressLine color={ProgressColor.Blue} label="React" delay={animationDelay()} progress={95} />
+          <ProgressLine color={ProgressColor.Red} label="Angular" delay={animationDelay()} progress={75} />
+          <ProgressLine color={ProgressColor.Green} label="Node" delay={animationDelay()} progress={65} />
+        </div>
+
         <div className={styles.icons}>{renderIcons()}</div>
       </div>
     </div>

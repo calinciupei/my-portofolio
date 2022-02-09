@@ -3,7 +3,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const { cssLoader } = require("../../tools/webpack-loaders");
 
 module.exports = function () {
   const base = {
@@ -14,14 +13,14 @@ module.exports = function () {
       app: "./client.tsx"
     },
     output: {
-      path: path.resolve(__dirname, "../../dist"),
+      path: path.resolve(__dirname, "../../public"),
       filename: "[name].js",
       pathinfo: false
     },
 
     devServer: {
       static: {
-        directory: path.join(__dirname, "../../dist"),
+        directory: path.join(__dirname, "../../public"),
       },
       client: {
         progress: true,
@@ -58,7 +57,19 @@ module.exports = function () {
           test: /\.css$/,
           exclude: /(node_modules)/,
           sideEffects: true,
-          use: ["style-loader", "css-modules-typescript-loader", cssLoader, "postcss-loader"]
+          use: [
+            "style-loader",
+            "css-modules-typescript-loader",
+            {
+              loader: "css-loader",
+              options: {
+                modules: {
+                  localIdentName: "[hash:base64:5]_[local]",
+                },
+              },
+            },
+            "postcss-loader"
+          ]
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,

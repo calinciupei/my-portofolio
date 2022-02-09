@@ -1,0 +1,18 @@
+.contact {
+
+  max-width: 500px; 
+
+  text-align: center;
+}
+
+.item {
+  margin-bottom: var(--spacing-10);
+}
+
+.hesitate {
+  color: var(--blue-300);
+}
+
+.hi {
+  color: var(--black);
+}

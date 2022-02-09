@@ -299,8 +299,8 @@
 
 :global(.typography-h916) {
   font-weight: var(--text-weight-extrabold);
-  font-size: var(--text-size-15);
-  line-height: var(--line-height-15);
+  font-size: var(--text-size-14);
+  line-height: var(--line-height-14);
 }
 
 :global(.typography-h091) {

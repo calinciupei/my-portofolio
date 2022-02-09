@@ -4,9 +4,11 @@ interface CssExports {
   'bounce': string;
   'box': string;
   'content': string;
+  'first': string;
   'icon': string;
   'icons': string;
   'link': string;
+  'progresses': string;
   'skills': string;
   'title': string;
 }

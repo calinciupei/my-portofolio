@@ -47,6 +47,20 @@
   height: 100%;
 }
 
+@media screen and (min-width: 1280px) {
+  .skills {
+    flex-direction: row;
+  }
+
+  .progresses {
+    padding: var(--spacing-5) 0;
+  }
+
+  .first {
+    margin-right: var(--spacing-10);
+  }
+}
+
 @keyframes bounce {
   from {
     opacity: 0;

@@ -8,7 +8,6 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionGzipPlugin = require("compression-webpack-plugin");
 const Zopfli = require("@gfx/zopfli");
 const { RetryChunkLoadPlugin } = require("webpack-retry-chunk-load-plugin");
-const { cssLoader } = require("../../tools/webpack-loaders");
 
 module.exports = function () {
   const base = {
@@ -46,7 +45,19 @@ module.exports = function () {
           test: /\.css$/,
           exclude: /(node_modules)/,
           sideEffects: true,
-          use: ["style-loader", "css-modules-typescript-loader", cssLoader, "postcss-loader"]
+          use: [
+            "style-loader",
+            "css-modules-typescript-loader",
+            {
+              loader: "css-loader",
+              options: {
+                modules: {
+                  localIdentName: "[hash:base64:5]_[local]",
+                },
+              },
+            },
+            "postcss-loader"
+          ]
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,

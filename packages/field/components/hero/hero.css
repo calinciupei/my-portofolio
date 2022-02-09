@@ -40,12 +40,8 @@
   animation-fill-mode: both;
 }
 
-.pp {
-  color: var(--green);
-}
-
-.bf {
-  color: var(--yellow)
+.text {
+ margin-bottom: var(--spacing-8);
 }
 
 @media screen and (min-width: 1280px) {
@@ -56,10 +52,6 @@
 
     align-items: center;
     justify-content: space-around;
-  }
-
-  .image, .media {
-    max-width: 340px;
   }
 
   .media {

@@ -2,14 +2,13 @@
 // Please do not change this file!
 interface CssExports {
   'animation': string;
-  'bf': string;
   'content': string;
   'fade-in-up': string;
   'hero': string;
   'image': string;
   'item': string;
   'media': string;
-  'pp': string;
+  'text': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

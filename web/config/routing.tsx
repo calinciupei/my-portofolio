@@ -23,7 +23,7 @@ const buildRouter = (): UniversalRouter =>
         path: `${ROUTES.HOME}`,
         action() {
           return (
-            <Suspense fallback={<></>}>
+            <Suspense fallback={<>Loading....</>}>
               <Home />
             </Suspense>
           );

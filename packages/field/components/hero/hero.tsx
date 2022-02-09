@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useCallback } from "react";
 import { Button, SHAPE } from "baseui/button";
+import { Upload } from "baseui/icon";
 import styles from "./hero.css";
 
 export type HeroClick = () => void;
@@ -40,7 +41,7 @@ export const Hero: FunctionComponent<HeroProps> = ({ imgSrc, onClick }) => {
         >
           It’s Călin,
         </div>
-        <div className={styles.animation} style={{ animationDelay: animationDelay() }}>
+        <div className={`${styles.animation} ${styles.text}`} style={{ animationDelay: animationDelay() }}>
           <p>
             I’m a front end developer specializing in building exceptional web experiences and occasionally designing.
           </p>
@@ -52,8 +53,8 @@ export const Hero: FunctionComponent<HeroProps> = ({ imgSrc, onClick }) => {
         </div>
 
         <div className={styles.animation} style={{ animationDelay: animationDelay() }}>
-          <Button onClick={handleClick} shape={SHAPE.pill}>
-            <span className={"typography-h22s"}>Say hello!</span>
+          <Button onClick={handleClick} shape={SHAPE.pill} endEnhancer={() => <Upload size={24} />}>
+            <span className={"typography-h22s"}>Resume</span>
           </Button>
         </div>
       </div>

@@ -14,7 +14,9 @@
     "types": ["node"],
     "allowJs": true,
     "preserveSymlinks": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "skipLibCheck": true
   },
   "include": [
     "**/*.ts*",
@@ -23,7 +25,6 @@
   "exclude": [
     "lib/**/*.test.js",
     "packages/**/*.test.js",
-    "jest.config.js",
-    "tools/*.js"
+    "jest.config.js"
   ]
 }
