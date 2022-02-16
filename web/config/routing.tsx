@@ -11,12 +11,12 @@ export const PAGE_NAMES = {
 
 const Home = React.lazy(
   () =>
-    import(/* webpackChunkName: "home-page" */ "../connects/connect-home/connect-home") as Promise<{
+    import(/* webpackChunkName: "home-page" */ "../connects/connect-home") as Promise<{
       default: ComponentType<ReactNode>;
     }>
 );
 
-const buildRouter = (): UniversalRouter =>
+const routes = (): UniversalRouter =>
   new UniversalRouter(
     [
       {
@@ -37,4 +37,4 @@ const buildRouter = (): UniversalRouter =>
     }
   );
 
-export default buildRouter;
+export default routes;

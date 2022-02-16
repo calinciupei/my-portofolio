@@ -49,7 +49,7 @@ export const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
   }, [isOpened, onClick]);
 
   return (
-    <div className={styles.menu}>
+    <div className={styles.menu} data-testid="bottom-navigation">
       <ul className={styles.list}>
         <li>
           <a className={styles.link} href={instagram} target="_blank" rel="noreferrer">
@@ -62,7 +62,7 @@ export const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
           </a>
         </li>
         <li className={styles.menuItem}>
-          <button onClick={handleMenuClick} className={styles.button}>
+          <button onClick={handleMenuClick} className={styles.button} data-testid="button-navigation">
             {renderButton()}
           </button>
         </li>

@@ -50,7 +50,7 @@ export const FullScreenNavigation: FunctionComponent<FullScreenNavigationProps> 
               </a>
             </li>
             <li>
-              <a href="/xresume" target="_self" className={linkStyle}>
+              <a href="/resume" target="_self" className={linkStyle}>
                 <span>4.</span>Resume
               </a>
             </li>

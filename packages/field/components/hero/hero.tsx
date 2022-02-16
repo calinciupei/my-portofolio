@@ -1,4 +1,5 @@
-import React, { FunctionComponent, useCallback } from "react";
+import React, { FunctionComponent } from "react";
+import DOMPurify from "dompurify";
 import { Button, SHAPE } from "baseui/button";
 import { Upload } from "baseui/icon";
 import styles from "./hero.css";
@@ -6,58 +7,64 @@ import styles from "./hero.css";
 export type HeroClick = () => void;
 
 export type HeroProps = {
+  salute: string;
+  name: string;
+  paragraph: string;
+  paragraphOne: string;
+  paragraphTwo: string;
+  buttonLabel: string;
   imgSrc: string;
   onClick: HeroClick;
 };
 
-export const Hero: FunctionComponent<HeroProps> = ({ imgSrc, onClick }) => {
+export const Hero: FunctionComponent<HeroProps> = ({
+  imgSrc,
+  buttonLabel,
+  name,
+  paragraph,
+  paragraphOne,
+  paragraphTwo,
+  salute,
+  onClick
+}) => {
   let defaultDelay = 0;
 
-  const animationDelay = (delay?: number): string => {
-    if (delay) {
-      return `${delay}ms`;
-    }
-
+  const animationDelay = (): string => {
     defaultDelay += 200;
+
     return `${defaultDelay}ms`;
   };
 
-  const handleClick = useCallback(() => {
-    onClick();
-  }, [onClick]);
-
   return (
-    <div className={styles.hero}>
+    <div className={styles.hero} data-testid="hero-section">
       <div className={`${styles.content}`}>
         <div
           className={`typography-h010 ${styles.animation} ${styles.item}`}
           style={{ animationDelay: animationDelay() }}
-        >
-          Hi <span>👋</span>,
-        </div>
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(salute) }}
+        />
+
         <div
           className={`typography-h012 ${styles.animation} ${styles.item}`}
           style={{ animationDelay: animationDelay() }}
-        >
-          It’s Călin,
-        </div>
+          dangerouslySetInnerHTML={{ __html: name }}
+        />
+
         <div className={`${styles.animation} ${styles.text}`} style={{ animationDelay: animationDelay() }}>
-          <p>
-            I’m a front end developer specializing in building exceptional web experiences and occasionally designing.
-          </p>
-          <p>Problem solver with high attention to detail, interested in frontend and working with positive people.</p>
-          <p>
-            Fan of NFL, outdoor activities. A family person and proud father which is trying to achieve perfect dad
-            jokes.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: paragraph }} />
+
+          <p dangerouslySetInnerHTML={{ __html: paragraphOne }} />
+
+          <p dangerouslySetInnerHTML={{ __html: paragraphTwo }} />
         </div>
 
         <div className={styles.animation} style={{ animationDelay: animationDelay() }}>
-          <Button onClick={handleClick} shape={SHAPE.pill} endEnhancer={() => <Upload size={24} />}>
-            <span className={"typography-h22s"}>Resume</span>
+          <Button onClick={onClick} shape={SHAPE.pill} endEnhancer={() => <Upload size={24} />}>
+            <span className={"typography-h22s"} dangerouslySetInnerHTML={{ __html: buttonLabel }} />
           </Button>
         </div>
       </div>
+
       <div className={`${styles.media} ${styles.animation}`} style={{ animationDelay: animationDelay() }}>
         <img className={styles.image} alt="portfolio" src={imgSrc} />
       </div>

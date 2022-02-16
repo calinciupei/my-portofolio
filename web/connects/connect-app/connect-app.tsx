@@ -1,10 +1,10 @@
-import React, { FunctionComponent, Suspense, useCallback, useEffect, useState } from "react";
+import React, { FunctionComponent, Suspense, useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { InitialState } from "@crew/types";
 import { getCurrentRoute } from "@crew/store/store-selectors/routes";
 import { PUSH, PushAction } from "@crew/store/actions/router";
 import { FullScreenNavigation, Stylist } from "@crew/field";
-import buildRouter from "../../config/routing";
+import routes from "../../config/routing";
 import { BottomNavigation, BottomNavigationProps } from "@crew/field";
 
 import "../../assets/css/global.css";
@@ -55,28 +55,31 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute, bottomNa
       }
     }
 
-    function resolve(): void {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-      const router = buildRouter();
+    async function resolveRoute(): Promise<void> {
+      const router = routes();
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
       const result = router.resolve({
         pathname: currentRoute
       });
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-      result.then((item) => {
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const item = await result;
+
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setView(item);
-      });
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn("BANG!!!!", e);
+      }
     }
 
-    if (currentRoute) resolve();
+    if (currentRoute) void resolveRoute();
   }, [currentRoute, dispatch]);
 
-  const handleMenuClick = useCallback((isOpened) => {
-    setIsMenuOpened(!isOpened);
-  }, []);
+  const handleMenuClick = () => {
+    setIsMenuOpened(!isMenuOpened);
+  };
 
   return (
     <Stylist>
@@ -88,7 +91,7 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute, bottomNa
 
       {view}
 
-      <div className={styles.menu}>
+      <div className={styles.menu} data-testid="navigation-bottom">
         <BottomNavigation {...bottomNavigation} onClick={handleMenuClick} />
       </div>
     </Stylist>

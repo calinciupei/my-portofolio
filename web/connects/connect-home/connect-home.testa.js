@@ -4,17 +4,18 @@ import React from "react";
 import { connect } from "react-redux";
 import ConnectHome from "./connect-home";
 
-const dispatchMock = jest.fn();
+const mockDispatch = jest.fn();
+const mockResolve = jest.fn();
 
 jest.mock("@crew/store", () => jest.fn(() => {}));
 jest.mock("../../config/routing", () => {
   jest.fn(() => {
-    resolve: resolveMock;
+    resolve: mockResolve;
   });
 });
 jest.mock("react-redux", () => {
   const connectMock = jest.fn().mockReturnValue((component) => component);
-  const useDispatchMock = () => dispatchMock;
+  const useDispatchMock = () => mockDispatch;
 
   return { connect: connectMock, useDispatch: useDispatchMock };
 });

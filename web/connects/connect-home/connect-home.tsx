@@ -1,20 +1,13 @@
 import React, { FunctionComponent } from "react";
-import { connect } from "react-redux";
 import { useInView } from "react-intersection-observer";
-import { InitialState } from "@crew/types";
 import { Hero, SkillsExperience } from "@crew/field";
+import { ConnectHomeProps } from "./props";
 
 import styles from "./connect-home.css";
 
-export type ConnectHomeProps = Record<string, unknown>;
-
-function mapStateToProps(): ConnectHomeProps {
-  return {};
-}
-
 const ConnectHome: FunctionComponent<ConnectHomeProps> = () => {
-  const [refOne, inViewOne] = useInView({ threshold: 0.2, delay: 200, trackVisibility: true });
-  const [refTwo, inViewTwo] = useInView({ threshold: 0.3, delay: 200, trackVisibility: true });
+  const [refOne, inViewOne] = useInView({ threshold: 0.2, delay: 100, trackVisibility: true });
+  const [refTwo, inViewTwo] = useInView({ threshold: 0.3, delay: 100, trackVisibility: true });
   const handleResumeClick = (): void => {};
 
   return (
@@ -30,6 +23,4 @@ const ConnectHome: FunctionComponent<ConnectHomeProps> = () => {
   );
 };
 
-export default connect<ConnectHomeProps, Record<string, never>, Record<string, unknown>, InitialState>(mapStateToProps)(
-  ConnectHome
-);
+export default ConnectHome;

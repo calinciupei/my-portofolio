@@ -10,6 +10,7 @@
     "lint": "yarn run stylelint && yarn run eslint",
     "stylelint": "stylelint components/**/*.css",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "type:check": "tsc"
   },
   "devDependencies": {
