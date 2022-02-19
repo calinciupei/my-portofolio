@@ -5,12 +5,30 @@ import { actions } from "@storybook/addon-actions";
 
 export default {
   title: "components/contact-section",
-  component: ContactSection
+  component: ContactSection,
+  argTypes: {
+    title: {
+      defaultValue: "React",
+      control: { type: "text" }
+    },
+    salute: {
+      defaultValue: "React",
+      control: { type: "text" }
+    },
+    text: {
+      defaultValue: "React",
+      control: { type: "text" }
+    },
+    label: {
+      defaultValue: "React",
+      control: { type: "text" }
+    }
+  }
 } as ComponentMeta<typeof ContactSection>;
 
 const handleClick: ContactClick = actions({ onClick: "contact button clicked" }) as unknown as ContactClick;
 
-export const main: ComponentStory<typeof ContactSection> = () => (
+export const Template: ComponentStory<typeof ContactSection> = ({ ...props }) => (
   <div
     style={{
       backgroundColor: "white",
@@ -23,6 +41,14 @@ export const main: ComponentStory<typeof ContactSection> = () => (
       padding: "30px"
     }}
   >
-    <ContactSection onClick={handleClick} {...handleClick} />
+    <ContactSection {...handleClick} {...props} onClick={handleClick} />
   </div>
 );
+
+export const Main = Template.bind({});
+Main.args = {
+  label: "Say hello 👋",
+  salute: "Hi",
+  text: "Whether you have a question or just want to get in touch don&apos;t hesitate to write, and I&apos;ll try my best to get back to you.",
+  title: "Don&apos;t hesitate to say"
+};

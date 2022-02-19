@@ -39,6 +39,7 @@ describe("BottomNavigation", () => {
 
     expect(menu).not.toBeNull();
     expect(menu.classList.contains(styles.menu)).toBe(true);
+    expect(menu.firstChild.classList.contains(styles.list)).toBe(true);
   });
 
   it("should show close icon", () => {

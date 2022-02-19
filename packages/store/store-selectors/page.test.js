@@ -1,15 +1,11 @@
 import "@testing-library/jest-dom/extend-expect";
-import {
-  createPageTitleSelector,
-  getPageTitle,
-  getPageDescription,
-} from "./page";
+import { createPageTitleSelector, getPageTitle, getPageDescription } from "./page";
 
 const stateMock = {
   page: {
     title: "Title",
-    description: "Page description",
-  },
+    description: "Page description"
+  }
 };
 
 describe("getPageTitle", () => {
