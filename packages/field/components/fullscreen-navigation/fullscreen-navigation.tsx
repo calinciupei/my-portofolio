@@ -3,11 +3,18 @@ import classnames from "classnames";
 
 import styles from "./fullscreen-navigation.css";
 
-export type FullScreenNavigationProps = {
-  isOpened: boolean;
+export type MenuList = {
+  target: string;
+  href: string;
+  label: string;
 };
 
-export const FullScreenNavigation: FunctionComponent<FullScreenNavigationProps> = ({ isOpened }) => {
+export type FullScreenNavigationProps = {
+  isOpened: boolean;
+  menuList: MenuList[];
+};
+
+export const FullScreenNavigation: FunctionComponent<FullScreenNavigationProps> = ({ isOpened, menuList }) => {
   const [opened, setOpened] = useState(isOpened);
   const linkStyle = classnames(`typography-h012 ${styles.link}`);
   const menuStyle = classnames(styles.menu, {
@@ -29,32 +36,24 @@ export const FullScreenNavigation: FunctionComponent<FullScreenNavigationProps> 
     }
   }, [isOpened]);
 
+  const renderList = (): JSX.Element => (
+    <>
+      {!!menuList.length &&
+        menuList.map(({ href, label, target }, index) => (
+          <li key={index} data-testid="menu-item">
+            <a href={href} target={target} className={linkStyle}>
+              <span>{index + 1}.</span> {label}
+            </a>
+          </li>
+        ))}
+    </>
+  );
+
   return (
     <>
       {opened && (
-        <div className={menuStyle}>
-          <ul>
-            <li>
-              <a href="#about" target="_self" className={linkStyle}>
-                <span>1.</span> About
-              </a>
-            </li>
-            <li>
-              <a href="#experience" target="_self" className={linkStyle}>
-                <span>2.</span>Experience
-              </a>
-            </li>
-            <li>
-              <a href="#contact" target="_self" className={linkStyle}>
-                <span>3.</span>Contact
-              </a>
-            </li>
-            <li>
-              <a href="/resume" target="_self" className={linkStyle}>
-                <span>4.</span>Resume
-              </a>
-            </li>
-          </ul>
+        <div className={menuStyle} data-testid="fullscreen-navigation">
+          <ul>{renderList()}</ul>
         </div>
       )}
     </>

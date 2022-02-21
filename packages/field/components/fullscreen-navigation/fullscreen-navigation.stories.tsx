@@ -1,13 +1,48 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { boolean } from "@storybook/addon-knobs";
-import { FullScreenNavigation } from "./fullscreen-navigation";
+import { FullScreenNavigation, MenuList } from "./fullscreen-navigation";
+
+const menuListMock: MenuList[] = [
+  {
+    href: "#about",
+    label: "About",
+    target: "_self"
+  },
+  {
+    href: "#experience",
+    label: "Experience",
+    target: "_self"
+  },
+  {
+    href: "#contact",
+    label: "Contact",
+    target: "_self"
+  },
+  {
+    href: "/resume",
+    label: "Resume",
+    target: "_self"
+  }
+];
 
 export default {
   title: "components/fullscreen-navigation",
-  component: FullScreenNavigation
+  component: FullScreenNavigation,
+  argTypes: {
+    menuList: {
+      defaultValue: menuListMock,
+      control: { type: "object" }
+    },
+    isOpened: {
+      defaultValue: false,
+      control: { type: "boolean" }
+    }
+  }
 } as ComponentMeta<typeof FullScreenNavigation>;
 
-export const Navigation: ComponentStory<typeof FullScreenNavigation> = () => (
-  <FullScreenNavigation isOpened={boolean("Is Opened", true)} />
+export const Template: ComponentStory<typeof FullScreenNavigation> = ({ ...props }) => (
+  <FullScreenNavigation {...props} />
 );
+
+export const Main = Template.bind({});
