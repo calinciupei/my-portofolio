@@ -37,7 +37,7 @@ export const ProgressLine: FunctionComponent<ProgressLineProps> = ({ delay, prog
     stop ? null : delay
   );
 
-  const getProgressColor = (colors: Colors) => {
+  const getProgressColor = (colors: Colors): string => {
     switch (color) {
       case ProgressColor.Blue:
         return colors.contentAccent;
@@ -52,8 +52,10 @@ export const ProgressLine: FunctionComponent<ProgressLineProps> = ({ delay, prog
 
   return (
     <>
-      <div className={`${styles.label} typography-h510`}>{label}</div>
-      <div className={styles.item}>
+      <div className={`${styles.label} typography-h510`} data-testid="progress-line-label">
+        {label}
+      </div>
+      <div className={styles.item} data-testid="progress-bar" data-color={color}>
         <ProgressBar
           value={value}
           overrides={{
@@ -64,6 +66,7 @@ export const ProgressLine: FunctionComponent<ProgressLineProps> = ({ delay, prog
             },
             BarProgress: {
               style: ({ $theme }) => {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
                 const color = getProgressColor($theme.colors);
 
                 return { backgroundColor: color };
