@@ -2,8 +2,11 @@ import { useEffect, useRef } from "react";
 
 type Callback = () => void;
 
+const noop = (): void => {};
+
+// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 function useInterval(callback: Callback, delay: number | null): void {
-  const saveCallback = useRef(() => {});
+  const saveCallback = useRef(noop);
 
   useEffect(() => {
     saveCallback.current = callback;
@@ -24,4 +27,4 @@ function useInterval(callback: Callback, delay: number | null): void {
   }, [delay]);
 }
 
-export { useInterval };
+export { useInterval, noop };

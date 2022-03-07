@@ -12,7 +12,7 @@ export type ArrowProps = {
 
 export const Arrow: FunctionComponent = () => {
   return (
-    <svg className={styles.arrow} viewBox="0 0 20 20" width="24" height="24">
+    <svg className={styles.arrow} viewBox="0 0 20 20" width="24" height="24" data-testid="arrow-icon">
       <path
         d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
           l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109
