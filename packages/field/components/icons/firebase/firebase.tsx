@@ -16,7 +16,14 @@ export const Firebase: FunctionComponent<FirebaseProps> = ({ color }) => {
   });
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 15 15" className={classes}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24px"
+      height="24px"
+      viewBox="0 0 15 15"
+      className={classes}
+      data-testid="firebase-icon"
+    >
       <g>
         <path d="M3.33.03a.5.5 0 0 1 .524.116l2.078 2.08a.505.505 0 0 0-.032.056L2.175 9.988L3.33.03z"></path>
         <path d="M2.262 11.94l4.98 2.989a.5.5 0 0 0 .444.035l5-2a.5.5 0 0 0 .31-.52l-1-9a.5.5 0 0 0-.828-.318L9.513 4.597L2.262 11.94z"></path>

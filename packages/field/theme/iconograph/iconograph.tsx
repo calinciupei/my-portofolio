@@ -38,7 +38,7 @@ const catalogue = [
 
 const Iconograph: FunctionComponent = () => (
   <>
-    <h1 className={styles.title}>Iconography</h1>
+    <h1 className={styles.title}>Iconographic</h1>
     <div className={styles.container}>
       {catalogue.map((Icon, idx) => {
         return (

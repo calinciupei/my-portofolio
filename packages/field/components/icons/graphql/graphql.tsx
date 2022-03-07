@@ -16,7 +16,14 @@ export const Graphql: FunctionComponent<GraphqlProps> = ({ color }) => {
   });
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" className={classes}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24px"
+      height="24px"
+      viewBox="0 0 24 24"
+      className={classes}
+      data-testid="graphql-icon"
+    >
       <g>
         <g clipPath="url(#footer-sample-full-0)">
           <path

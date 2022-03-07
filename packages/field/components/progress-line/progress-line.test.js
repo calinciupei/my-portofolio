@@ -1,4 +1,4 @@
-import { render, act, screen } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import React from "react";
 import { ProgressLine } from "./progress-line";
 
@@ -37,8 +37,6 @@ describe("progress line component", () => {
     act(() => {
       jest.runAllTimers();
     });
-
-    screen.debug();
 
     expect(progressBar.getAttribute("data-color")).toEqual("blue");
     expect(progressBar.firstChild.getAttribute("aria-valuenow")).toEqual("50");

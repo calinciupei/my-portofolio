@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from "react";
 import classnames from "classnames";
+import DOMPurify from "dompurify";
 import { StatefulTooltip } from "baseui/tooltip";
 import { Icons } from "../icons/icons";
+import { ProgressColor, ProgressLine } from "../progress-line/progress-line";
 
 import styles from "./skills-experience.css";
-import { ProgressColor, ProgressLine } from "../progress-line/progress-line";
 
 export enum IconsType {
   Html5 = "html5",
@@ -57,37 +58,23 @@ const {
   SassColor
 } = Icons;
 
-const iconsContent: { title: string; icon: IconsType; url: string }[] = [
-  { title: "Html5", icon: IconsType.Html5, url: "https://en.wikipedia.org/wiki/HTML5" },
-  { title: "Css", icon: IconsType.Css, url: "" },
-  { title: "Javascript", icon: IconsType.Javascript, url: "" },
-  { title: "Typescript", icon: IconsType.Typescript, url: "" },
-  { title: "React", icon: IconsType.ReactIcon, url: "" },
-  { title: "Redux", icon: IconsType.Redux, url: "" },
-  { title: "ReduxSaga", icon: IconsType.ReduxSaga, url: "" },
-  { title: "Sass", icon: IconsType.Sass, url: "" },
-  { title: "Node", icon: IconsType.Node, url: "" },
-  { title: "Express", icon: IconsType.Express, url: "" },
-  { title: "Graphql", icon: IconsType.Graphql, url: "" },
-  { title: "Jest", icon: IconsType.Jest, url: "" },
-  { title: "Firebase", icon: IconsType.Firebase, url: "" },
-  { title: "Jenkins", icon: IconsType.Jenkins, url: "" },
-  { title: "Github", icon: IconsType.Github, url: "" }
-];
-
-export type SkillsExperienceProps = {
-  label?: string;
+export type SkillIcons = {
+  title: string;
+  icon: IconsType;
+  url: string;
 };
 
-export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = () => {
+export type SkillsExperienceProps = {
+  skills: SkillIcons[];
+  title: string;
+  content: string[];
+};
+
+export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = ({ skills, title, content }) => {
   const classes = classnames(styles.skills);
   let defaultDelay = 0;
 
-  const animationDelay = (delay?: number): number => {
-    if (delay) {
-      return delay;
-    }
-
+  const animationDelay = (): number => {
     defaultDelay += 150;
     return defaultDelay;
   };
@@ -148,48 +135,54 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = () => 
     }
   };
 
+  const renderContent = (): JSX.Element => {
+    return (
+      <>
+        {!!content.length &&
+          content.map((content, index) => (
+            <p
+              key={index}
+              className={styles.box}
+              style={{ animationDelay: getDelay() }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }}
+            />
+          ))}
+      </>
+    );
+  };
+
+  const renderTooltipTitle = (title: string): JSX.Element => <>{title}</>;
+
   const renderIcons = (): JSX.Element => {
     return (
       <>
-        {iconsContent.map(({ title, icon, url }) => (
-          <div key={icon} className={`${styles.icon} ${styles.box}`} style={{ animationDelay: getDelay() }}>
-            <StatefulTooltip content={() => title} placement="bottom" showArrow returnFocus>
-              <a href={url} target={"_blank"} rel="noreferrer" className={styles.link}>
-                {renderIcon(icon)}
-              </a>
-            </StatefulTooltip>
-          </div>
-        ))}
+        {!!skills.length &&
+          skills.map(({ title, icon, url }) => (
+            <div key={icon} className={`${styles.icon} ${styles.box}`} style={{ animationDelay: getDelay() }}>
+              <StatefulTooltip content={renderTooltipTitle(title)} placement="bottom" showArrow returnFocus>
+                <a href={url} target={"_blank"} rel="noreferrer" className={styles.link}>
+                  {renderIcon(icon)}
+                </a>
+              </StatefulTooltip>
+            </div>
+          ))}
       </>
     );
   };
 
   return (
-    <div className={classes}>
-      <div className={styles.first}>
-        <div className={`typography-h916 ${styles.title} ${styles.box}`} style={{ animationDelay: getDelay() }}>
-          Tools & <br /> Experience
-        </div>
+    <div className={classes} data-testid="skills">
+      <div className={styles.first} data-testid="skills-content">
+        <div
+          className={`typography-h916 ${styles.title} ${styles.box}`}
+          style={{ animationDelay: getDelay() }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(title) }}
+        />
 
-        <div className={`${styles.content}`}>
-          <p className={styles.box} style={{ animationDelay: getDelay() }}>
-            My passion to create things that contributed with a very minuscular portion to the vast space of the
-            internet started in high school by hacking and building my first website that represented my school.
-          </p>
-          <p className={styles.box} style={{ animationDelay: getDelay() }}>
-            Fast-forward to today, I&apos;ve did remote work for huge corporations, advertising agencies, consulted
-            startup companies, and had the privilege of working with talented people to create web products for consumer
-            use and business
-          </p>
-          <p className={styles.box} style={{ animationDelay: getDelay() }}>
-            The main area of my expertise is front-end development, building scalable web apps, custom libraries,
-            animations, and interactive responsive layouts. I want to mention first I&apos;ve started as a full-stack
-            developer and working with popular open-source frameworks like Express, Fastyify, Gatsby, and NEXT.
-          </p>
-        </div>
+        <div className={`${styles.content}`}>{renderContent()}</div>
       </div>
 
-      <div>
+      <div data-testid="skills-progress">
         <div className={`${styles.box} ${styles.progresses}`} style={{ animationDelay: getDelay() }}>
           <ProgressLine color={ProgressColor.Blue} label="React" delay={animationDelay()} progress={95} />
           <ProgressLine color={ProgressColor.Red} label="Angular" delay={animationDelay()} progress={75} />
