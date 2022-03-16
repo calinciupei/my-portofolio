@@ -5,8 +5,8 @@ import { getCurrentRoute } from "@crew/store/store-selectors/routes";
 import { PUSH, PushAction } from "@crew/store/actions/router";
 import { Stylist } from "@crew/field";
 import routes from "../../config/routing";
-import { BottomNavigation, BottomNavigationProps } from "@crew/field";
 import NavigationMenu from "../navigation";
+import NavigationControls from "../navigation-controls";
 
 import "../../assets/css/global.css";
 import styles from "./connect-app.css";
@@ -19,29 +19,19 @@ const ConnectHelmet = React.lazy(
 
 export type ConnectAppProps = {
   currentRoute: string;
-  bottomNavigation: BottomNavigationProps;
 };
 
 function mapStateProps(state: InitialState): ConnectAppProps {
   const path = getCurrentRoute(state);
 
-  const bottomNavigation = (): BottomNavigationProps => ({
-    github: "https://github.com/calinciupei",
-    instagram: "",
-    linkedin: "",
-    twitter: ""
-  });
-
   return {
-    currentRoute: path,
-    bottomNavigation: { ...bottomNavigation() }
+    currentRoute: path
   };
 }
 
-const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute, bottomNavigation }) => {
+const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute }) => {
   const dispatch = useDispatch();
   const [view, setView] = useState();
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   useEffect(() => {
     if (!currentRoute) {
@@ -78,10 +68,6 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute, bottomNa
     if (currentRoute) void resolveRoute();
   }, [currentRoute, dispatch]);
 
-  const handleMenuClick = () => {
-    setIsMenuOpened(!isMenuOpened);
-  };
-
   return (
     <Stylist>
       <Suspense fallback={<></>}>
@@ -93,7 +79,7 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute, bottomNa
       {view}
 
       <div className={styles.menu} data-testid="navigation-bottom">
-        <BottomNavigation {...bottomNavigation} onClick={handleMenuClick} />
+        <NavigationControls />
       </div>
     </Stylist>
   );

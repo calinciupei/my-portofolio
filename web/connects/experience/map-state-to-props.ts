@@ -14,7 +14,7 @@ export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState
   const skills: SkillIcons[] = [
     { title: "Html5", icon: "html5", url: "https://developer.mozilla.org/en-US/docs/Glossary/HTML" },
     { title: "Css", icon: "css", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-    { title: "Javascript", icon: "javaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { title: "Javascript", icon: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
     { title: "Typescript", icon: "typescript", url: "https://www.typescriptlang.org/" },
     { title: "React", icon: "reactIcon", url: "https://reactjs.org/" },
     { title: "Redux", icon: "redux", url: "https://redux.js.org/" },
