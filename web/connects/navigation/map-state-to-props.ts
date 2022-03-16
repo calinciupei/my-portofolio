@@ -1,34 +1,39 @@
 import { MapStateToProps } from "react-redux";
 import { InitialState } from "@crew/types";
+import { createNavigationStateSelector } from "@crew/store/store-selectors/menu-navigation";
 import { StateProps, OwnProps } from "./props";
+import { i18n } from "../../helpers/i18n";
 
-export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState> = (): StateProps => {
+export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState> = (state): StateProps => {
+  const getNavigationMenuState = createNavigationStateSelector();
+  const { isOpen } = getNavigationMenuState(state);
+
   const menuList = [
     {
       href: "#about",
-      label: "About",
+      label: i18n({ key: "I18N.ABOUT" }),
       target: "_self"
     },
     {
       href: "#experience",
-      label: "Experience",
+      label: i18n({ key: "I18N.EXPERIENCE" }),
       target: "_self"
     },
     {
       href: "#contact",
-      label: "Contact",
+      label: i18n({ key: "I18N.CONTACT" }),
       target: "_self"
     },
     {
       href: "/resume-ciupei-calin.pdf",
-      label: "Resume",
+      label: i18n({ key: "I18N.RESUME" }),
       target: "_self"
     }
   ];
 
   return {
     navigation: {
-      isOpened: true,
+      isOpened: isOpen,
       menuList
     }
   };

@@ -27,4 +27,8 @@ export type TranslationsKey = {
   "I18N.CONTACT.SALUTE": string;
   "I18N.CONTACT.TEXT": string;
   "I18N.CONTACT.TITLE": string;
+  "I18N.ABOUT": string;
+  "I18N.EXPERIENCE": string;
+  "I18N.CONTACT": string;
+  "I18N.RESUME": string;
 };

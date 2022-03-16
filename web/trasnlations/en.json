@@ -26,5 +26,9 @@
   "I18N.CONTACT.LABEL": "Say hello 👋",
   "I18N.CONTACT.SALUTE": "Hi",
   "I18N.CONTACT.TEXT": "Whether you have a question or just want to get in touch don&apos;t hesitate to write, and I&apos;ll try my best to get back to you.",
-  "I18N.CONTACT.TITLE": "Don&apos;t hesitate to say"
+  "I18N.CONTACT.TITLE": "Don&apos;t hesitate to say",
+  "I18N.ABOUT": "About",
+  "I18N.EXPERIENCE": "Experience",
+  "I18N.CONTACT": "Contact",
+  "I18N.RESUME": "Resume"
 }
