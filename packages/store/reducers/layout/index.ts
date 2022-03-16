@@ -5,5 +5,5 @@ import menuNavigationReducer from "./menu-navigation";
 
 export const layoutReducer: Reducer<Layout> = combineReducers<Layout>({
   modal: modalReducer,
-  menuNavigation: menuNavigationReducer,
+  menuNavigation: menuNavigationReducer
 });

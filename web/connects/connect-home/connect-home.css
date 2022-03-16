@@ -6,10 +6,17 @@
 
 .section {
   display: flex;
-
   align-items: center;
+  justify-content: center;
+
   width: 100%;
-  max-width: 1280px;
-  height: 90%;
+  height: 100%;
+
   margin: 0 auto;
+}
+
+@media screen and (min-width: 1280px) {
+  .section {
+    max-width: 1280px;
+  }
 }

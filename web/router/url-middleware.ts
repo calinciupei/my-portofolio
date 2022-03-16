@@ -1,12 +1,12 @@
-import { PUSH, PushAction } from "@crew/store/actions/router";
+import { PUSH, PushAction, REPLACE, ReplaceAction } from "@crew/store/actions/router";
 import { Middleware, Dispatch } from "redux";
 import history from "./history";
 
 const baseHref = document.getElementsByTagName("base")[0]?.getAttribute("href") || "";
 
-type Actions = PushAction;
+type Actions = PushAction | ReplaceAction;
 
-const routingActionTypes = [PUSH];
+const routingActionTypes = [PUSH, REPLACE];
 
 export const urlMiddleware: Middleware = () => (next: Dispatch<Actions>) => (action: Actions) => {
   let url;
@@ -19,8 +19,8 @@ export const urlMiddleware: Middleware = () => (next: Dispatch<Actions>) => (act
         if (url !== window.location.pathname) {
           history.push(url, action.payload);
         }
-
         break;
+
       default:
         break;
     }

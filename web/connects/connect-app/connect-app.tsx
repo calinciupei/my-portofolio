@@ -3,9 +3,10 @@ import { connect, useDispatch } from "react-redux";
 import { InitialState } from "@crew/types";
 import { getCurrentRoute } from "@crew/store/store-selectors/routes";
 import { PUSH, PushAction } from "@crew/store/actions/router";
-import { FullScreenNavigation, Stylist } from "@crew/field";
+import { Stylist } from "@crew/field";
 import routes from "../../config/routing";
 import { BottomNavigation, BottomNavigationProps } from "@crew/field";
+import NavigationMenu from "../navigation";
 
 import "../../assets/css/global.css";
 import styles from "./connect-app.css";
@@ -87,7 +88,7 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute, bottomNa
         <ConnectHelmet />
       </Suspense>
 
-      <FullScreenNavigation isOpened={isMenuOpened} />
+      <NavigationMenu />
 
       {view}
 

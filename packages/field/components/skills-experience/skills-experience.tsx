@@ -60,7 +60,7 @@ const {
 
 export type SkillIcons = {
   title: string;
-  icon: IconsType;
+  icon: string | IconsType;
   url: string;
 };
 
@@ -75,7 +75,7 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = ({ ski
   let defaultDelay = 0;
 
   const animationDelay = (): number => {
-    defaultDelay += 150;
+    defaultDelay += 200;
     return defaultDelay;
   };
 
@@ -83,7 +83,7 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = ({ ski
     return `${animationDelay()}ms`;
   };
 
-  const renderIcon = (icon: IconsType): JSX.Element => {
+  const renderIcon = (icon: string | IconsType): JSX.Element => {
     switch (icon) {
       case IconsType.Html5:
         return <Html5 color={Html5Color.Carbon} />;

@@ -1,6 +1,5 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { boolean } from "@storybook/addon-knobs";
 import { FullScreenNavigation, MenuList } from "./fullscreen-navigation";
 
 const menuListMock: MenuList[] = [

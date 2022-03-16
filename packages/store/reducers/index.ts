@@ -7,7 +7,7 @@ import { layoutReducer } from "./layout";
 const appReducers: Reducer<InitialState> = combineReducers<InitialState>({
   router: routerReducer,
   page: pageReducer,
-  layout: layoutReducer,
+  layout: layoutReducer
 });
 
 export default appReducers;

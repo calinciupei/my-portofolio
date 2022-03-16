@@ -52,8 +52,9 @@ const Root: FunctionComponent = () => (
 );
 
 render(<Root />, rootElement);
-
+// ts-ignore
 if (module.hot) {
+  // ts-ignore
   module.hot.accept("./connects/connect-app/connect-app", (): void => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     App = require("./connects/connect-app/connect-app").default;

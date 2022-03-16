@@ -8,15 +8,14 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "moduleResolution": "node",
+    "noEmit": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "resolveJsonModule": true,
     "lib": ["dom", "es2017", "ESNext.Intl"],
     "skipLibCheck": true
   },
-  "include": [
-    "**/*.ts*"
-  ],
+  "include": ["**/*.ts*", "**/*.test.js", "custom-typings.d.ts"],
   "exclude": [
     "lib/**/*.test.js",
     "packages/**/*.test.js",

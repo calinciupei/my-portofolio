@@ -1,23 +1,27 @@
 import React, { FunctionComponent } from "react";
 import { useInView } from "react-intersection-observer";
-import { Hero, SkillsExperience } from "@crew/field";
 import { ConnectHomeProps } from "./props";
+import HeroBanner from "../hero-banner";
+import Experience from "../experience";
+import Contact from "../contact";
 
 import styles from "./connect-home.css";
 
 const ConnectHome: FunctionComponent<ConnectHomeProps> = () => {
   const [refOne, inViewOne] = useInView({ threshold: 0.2, delay: 100, trackVisibility: true });
   const [refTwo, inViewTwo] = useInView({ threshold: 0.3, delay: 100, trackVisibility: true });
-  const handleResumeClick = (): void => {};
+  const [refThree, inViewThree] = useInView({ threshold: 0.4, delay: 100, trackVisibility: true });
 
   return (
-    <div className={styles.main}>
-      <section ref={refOne} className={styles.section}>
-        {inViewOne && <Hero onClick={handleResumeClick} imgSrc="/cc-portfolio.png" />}
-      </section>
+    <div ref={refOne} className={styles.main}>
+      <section className={styles.section}>{inViewOne && <HeroBanner />}</section>
 
       <section ref={refTwo} className={styles.section}>
-        {inViewTwo && <SkillsExperience />}
+        {inViewTwo && <Experience />}
+      </section>
+
+      <section ref={refThree} className={styles.section}>
+        {inViewThree && <Contact />}
       </section>
     </div>
   );
