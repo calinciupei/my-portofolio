@@ -6,7 +6,7 @@ import { PUSH, PushAction } from "../../actions/router";
 type ActionTypes = PushAction;
 
 const routerReducer: Reducer<RouterState, ActionTypes> = (
-  state = { currentRoute: "", page: null, path: "/" },
+  state = { currentRoute: "", page: null, path: "/", hash: "" },
   action: ActionTypes
 ): RouterState => {
   switch (action.type) {
@@ -14,7 +14,8 @@ const routerReducer: Reducer<RouterState, ActionTypes> = (
       return {
         ...state,
         currentRoute: action.payload.currentRoute,
-        path: action.payload.path
+        path: action.payload.path,
+        hash: action.payload.hash
       };
     default:
       return state;

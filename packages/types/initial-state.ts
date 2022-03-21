@@ -9,6 +9,7 @@ export type RouterState = {
   currentRoute: string;
   page?: PageState | null;
   path: string;
+  hash?: string;
 };
 
 export type InitialState = {

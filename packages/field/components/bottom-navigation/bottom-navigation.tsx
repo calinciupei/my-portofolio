@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useCallback, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { Icons } from "../icons/icons";
 
 import styles from "./bottom-navigation.css";
@@ -18,9 +18,10 @@ const {
   MenuOpenedColor
 } = Icons;
 
-export type MenuClick = (isOpened: boolean) => void;
+export type MenuClick = () => void;
 
 export type BottomNavigationProps = {
+  isOpened: boolean;
   instagram: string;
   linkedin: string;
   twitter: string;
@@ -29,24 +30,16 @@ export type BottomNavigationProps = {
 };
 
 export const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
+  isOpened,
   instagram,
   linkedin,
   twitter,
   github,
   onClick
 }) => {
-  const [isOpened, setIsOpened] = useState(false);
-
   const renderButton = (): JSX.Element => {
     return isOpened ? <MenuOpened color={MenuOpenedColor.white} /> : <Menu color={MenuColor.white} />;
   };
-
-  const handleMenuClick = useCallback(() => {
-    setIsOpened(!isOpened);
-    if (onClick) {
-      onClick(isOpened);
-    }
-  }, [isOpened, onClick]);
 
   return (
     <div className={styles.menu} data-testid="bottom-navigation">
@@ -62,7 +55,7 @@ export const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
           </a>
         </li>
         <li className={styles.menuItem}>
-          <button onClick={handleMenuClick} className={styles.button} data-testid="button-navigation">
+          <button onClick={onClick} className={styles.button} data-testid="button-navigation">
             {renderButton()}
           </button>
         </li>

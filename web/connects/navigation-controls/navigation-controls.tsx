@@ -2,9 +2,9 @@ import React, { FunctionComponent } from "react";
 import { ComponentProps } from "./props";
 import { BottomNavigation } from "@crew/field";
 
-const NavigationControls: FunctionComponent<ComponentProps> = ({ dispatchMenuClick, isOpen, socials }) => {
+const NavigationControls: FunctionComponent<ComponentProps> = ({ dispatchMenuClick, socials }) => {
   const handleClick = (): void => {
-    dispatchMenuClick(isOpen);
+    dispatchMenuClick(socials.isOpened);
   };
 
   return <BottomNavigation {...socials} onClick={handleClick} />;

@@ -3,6 +3,8 @@ import classnames from "classnames";
 
 import styles from "./fullscreen-navigation.css";
 
+export type NavigationClick = () => void;
+
 export type MenuList = {
   target: string;
   href: string;
@@ -12,9 +14,10 @@ export type MenuList = {
 export type FullScreenNavigationProps = {
   isOpened: boolean;
   menuList: MenuList[];
+  onClick?: NavigationClick;
 };
 
-export const FullScreenNavigation: FunctionComponent<FullScreenNavigationProps> = ({ isOpened, menuList }) => {
+export const FullScreenNavigation: FunctionComponent<FullScreenNavigationProps> = ({ isOpened, menuList, onClick }) => {
   const [opened, setOpened] = useState(isOpened);
   const linkStyle = classnames(`typography-h012 ${styles.link}`);
   const menuStyle = classnames(styles.menu, {
@@ -41,7 +44,7 @@ export const FullScreenNavigation: FunctionComponent<FullScreenNavigationProps> 
       {!!menuList.length &&
         menuList.map(({ href, label, target }, index) => (
           <li key={index} data-testid="menu-item">
-            <a href={href} target={target} className={linkStyle}>
+            <a href={href} target={target} className={linkStyle} onClick={onClick}>
               <span>{index + 1}.</span> {label}
             </a>
           </li>

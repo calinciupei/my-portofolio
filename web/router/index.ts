@@ -1,2 +1,2 @@
-export * from "./history-listner";
+export * from "./history-listener";
 export * from "./url-middleware";

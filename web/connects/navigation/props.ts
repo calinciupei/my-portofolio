@@ -5,6 +5,7 @@ export type OwnProps = Record<string, unknown>;
 
 export type StateProps = {
   navigation: FullScreenNavigationProps;
+  offsetTop: number;
 } & OwnProps;
 
 export type ComponentProps = StateProps & DispatchProps;

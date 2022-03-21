@@ -3,10 +3,19 @@ import { InitialState } from "@crew/types";
 import { createNavigationStateSelector } from "@crew/store/store-selectors/menu-navigation";
 import { StateProps, OwnProps } from "./props";
 import { i18n } from "../../helpers/i18n";
+import {
+  CurrentOffsetPosition,
+  MenuToggleClick,
+  UI__CURRENT_POSITION_CLICK,
+  UI__MENU_TOGGLE_CLICK
+} from "@crew/store/actions/layout";
+import { createCurrentPositionSelector } from "@crew/store/store-selectors/current-position";
 
 export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState> = (state): StateProps => {
   const getNavigationMenuState = createNavigationStateSelector();
+  const getCurrentPosition = createCurrentPositionSelector();
   const { isOpen } = getNavigationMenuState(state);
+  const { offsetTop } = getCurrentPosition(state);
 
   const menuList = [
     {
@@ -35,10 +44,35 @@ export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState
     navigation: {
       isOpened: isOpen,
       menuList
+    },
+    offsetTop
+  };
+};
+
+const dispatchHideNavigationMenu = (): MenuToggleClick => {
+  return {
+    type: UI__MENU_TOGGLE_CLICK,
+    payload: {
+      isOpen: false
     }
   };
 };
 
-export type DispatchProps = Record<string, unknown>;
+const dispatchCurrentPosition = (position: number): CurrentOffsetPosition => {
+  return {
+    type: UI__CURRENT_POSITION_CLICK,
+    payload: {
+      offsetTop: position
+    }
+  };
+};
 
-export const mapDispatchProps: DispatchProps = {};
+export type DispatchProps = {
+  dispatchHideNavigationMenu: typeof dispatchHideNavigationMenu;
+  dispatchCurrentPosition: typeof dispatchCurrentPosition;
+};
+
+export const mapDispatchProps: DispatchProps = {
+  dispatchHideNavigationMenu,
+  dispatchCurrentPosition
+};

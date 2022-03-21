@@ -26,7 +26,8 @@ const dispatchResumeDownload = (): PushAction => {
     type: PUSH,
     payload: {
       currentRoute: window.location.pathname,
-      path: window.location.pathname
+      path: window.location.pathname,
+      hash: window.location.hash
     }
   };
 };

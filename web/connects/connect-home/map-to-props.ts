@@ -1,13 +1,35 @@
 import { MapStateToProps } from "react-redux";
 import { InitialState } from "@crew/types";
+import { StateProps, ComponentProps, HashSections } from "./props";
+import { createRouterSelector } from "@crew/store/store-selectors/routes";
+import { CurrentOffsetPosition, UI__CURRENT_POSITION_CLICK } from "@crew/store/actions/layout";
+import { createCurrentPositionSelector } from "@crew/store/store-selectors/current-position";
 
-export type StateProps = Record<string, unknown>;
-export type ContainerProps = Record<string, unknown>;
+export const mapStateToProps: MapStateToProps<StateProps, ComponentProps, InitialState> = (state): StateProps => {
+  const getRouterState = createRouterSelector();
+  const getCurrentPosition = createCurrentPositionSelector();
+  const { hash } = getRouterState(state);
+  const { offsetTop } = getCurrentPosition(state);
 
-export const mapStateToProps: MapStateToProps<StateProps, ContainerProps, InitialState> = (): StateProps => {
-  return {};
+  return {
+    routeHash: hash as HashSections,
+    offsetTop
+  };
 };
 
-export type DispatchProps = Record<string, unknown>;
+const dispatchCurrentPosition = (position: number): CurrentOffsetPosition => {
+  return {
+    type: UI__CURRENT_POSITION_CLICK,
+    payload: {
+      offsetTop: position
+    }
+  };
+};
 
-export const mapDispatchProps: DispatchProps = {};
+export type DispatchProps = {
+  dispatchCurrentPosition: typeof dispatchCurrentPosition;
+};
+
+export const mapDispatchProps: DispatchProps = {
+  dispatchCurrentPosition
+};
