@@ -12,7 +12,7 @@ const ConnectHome: FunctionComponent<ComponentProps> = ({ routeHash, offsetTop }
   const refExperience = useRef<HTMLDivElement>(null);
   const refContact = useRef<HTMLDivElement>(null);
   const [refOne, inViewOne] = useInView({ threshold: 0, delay: 100, trackVisibility: true });
-  const [refTwo, inViewTwo] = useInView({ threshold: 0, delay: 200, trackVisibility: true });
+  const [refTwo, inViewTwo] = useInView({ threshold: 0.3, delay: 100, trackVisibility: true });
   const [refThree, inViewThree] = useInView({ threshold: 0, delay: 100, trackVisibility: true });
 
   useEffect(() => {
@@ -37,12 +37,20 @@ const ConnectHome: FunctionComponent<ComponentProps> = ({ routeHash, offsetTop }
     <div id="homePage" className={styles.main}>
       <div ref={refHero} />
       <section ref={refOne} className={styles.section}>
-        {inViewOne && <HeroBanner />}
+        {inViewOne && (
+          <div className={styles.item}>
+            <HeroBanner />
+          </div>
+        )}
       </section>
 
       <div ref={refExperience} />
       <section ref={refTwo} className={styles.section}>
-        {inViewTwo && <Experience />}
+        {inViewTwo && (
+          <div className={styles.item}>
+            <Experience />
+          </div>
+        )}
       </section>
 
       <div ref={refContact} />

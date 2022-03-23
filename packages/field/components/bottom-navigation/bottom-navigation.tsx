@@ -55,7 +55,12 @@ export const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
           </a>
         </li>
         <li className={styles.menuItem}>
-          <button onClick={onClick} className={styles.button} data-testid="button-navigation">
+          <button
+            onClick={onClick}
+            className={styles.button}
+            data-testid="button-navigation"
+            aria-label="hamburger-button"
+          >
             {renderButton()}
           </button>
         </li>

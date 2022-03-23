@@ -11,7 +11,7 @@ export const PAGE_NAMES = {
 
 const Home = React.lazy(
   () =>
-    import(/* webpackChunkName: "home-page" */ "../connects/connect-home") as Promise<{
+    import(/* webpackChunkName: "home-page" */ "../connects/connect-home") as unknown as Promise<{
       default: ComponentType<ReactNode>;
     }>
 );

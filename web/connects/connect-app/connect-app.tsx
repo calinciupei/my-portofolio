@@ -7,6 +7,7 @@ import { Stylist } from "@crew/field";
 import routes from "../../config/routing";
 import NavigationMenu from "../navigation";
 import NavigationControls from "../navigation-controls";
+import Header from "../header";
 
 import "../../assets/css/global.css";
 import styles from "./connect-app.css";
@@ -74,6 +75,8 @@ const ConnectApp: FunctionComponent<ConnectAppProps> = ({ currentRoute }) => {
       <Suspense fallback={<></>}>
         <ConnectHelmet />
       </Suspense>
+
+      <Header />
 
       <NavigationMenu />
 

@@ -34,7 +34,7 @@ export default {
       control: { type: "object" }
     },
     isOpened: {
-      defaultValue: false,
+      defaultValue: true,
       control: { type: "boolean" }
     }
   }
@@ -43,5 +43,3 @@ export default {
 export const Template: ComponentStory<typeof FullScreenNavigation> = ({ ...props }) => (
   <FullScreenNavigation {...props} />
 );
-
-export const Main = Template.bind({});

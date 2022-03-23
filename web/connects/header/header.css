@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  z-index: 1;
+
+  width: 100%;
+  height: var(--header-height);
+  padding: var(--spacing-4) 0;
+
+  text-align: center;
+
+  background-color: var(--white);
+  border-bottom: 1px solid var(--carbon);
+}
+
+.header::after {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background: var(--feather-to-bottom);
+
+  content: "";
+}

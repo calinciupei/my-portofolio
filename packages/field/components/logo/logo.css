@@ -1,0 +1,15 @@
+.logo {
+  height: 100%;
+}
+
+.carbon {
+  fill: var(--carbon);
+}
+
+.blue {
+  fill: var(--blue-300);
+}
+
+.white {
+  fill: var(--white);
+}
