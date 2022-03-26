@@ -15,6 +15,6 @@ addDecorator(story => {
 addDecorator(withA11y);
 addParameters({
   options: {
-    theme: themes.dark
+    theme: themes.light //themes.dark
   }
 });

@@ -33,7 +33,9 @@ const catalogue = [
   <Icons.Express key="express" color={Icons.ExpressColor.Carbon} />,
   <Icons.Jest key="Jest" color={Icons.JestColor.Carbon} />,
   <Icons.Graphql key="Graphql" color={Icons.GraphqlColor.Carbon} />,
-  <Icons.Sass key="Graphql" color={Icons.SassColor.Carbon} />
+  <Icons.Sass key="Graphql" color={Icons.SassColor.Carbon} />,
+  <Icons.CircleFull key="Circle Full" color={Icons.CircleFullColor.Carbon} />,
+  <Icons.CircleDot key="Circle Dot" color={Icons.CircleDotColors.Carbon} />
 ];
 
 const Iconograph: FunctionComponent = () => (

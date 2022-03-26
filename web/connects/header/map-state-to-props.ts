@@ -1,3 +1,4 @@
+import { PUSH, PushAction } from "@crew/store/actions/router";
 import { InitialState } from "@crew/types";
 import { MapStateToProps } from "react-redux";
 import { StateProps, OwnProps } from "./props";
@@ -6,6 +7,18 @@ export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState
   return {};
 };
 
-export type DispatchProps = Record<string, unknown>;
+const dispatchLogoClick = (): PushAction => {
+  return {
+    type: PUSH,
+    payload: {
+      currentRoute: "/",
+      path: "/"
+    }
+  };
+};
 
-export const mapDispatchProps: DispatchProps = {};
+export type DispatchProps = {
+  dispatchLogoClick: typeof dispatchLogoClick;
+};
+
+export const mapDispatchProps: DispatchProps = { dispatchLogoClick };

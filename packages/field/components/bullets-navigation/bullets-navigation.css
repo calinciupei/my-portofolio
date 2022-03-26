@@ -1,0 +1,11 @@
+.item {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: var(--spacing-3) 0;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+}

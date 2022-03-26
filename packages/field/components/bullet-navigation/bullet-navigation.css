@@ -1,0 +1,17 @@
+.bullet {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.bullet:hover {
+  cursor: pointer;
+}
+
+.img {
+  max-width: 300px;
+  padding: var(--spacing-1);
+
+  background-color: var(--white);
+  border-radius: 8px;
+}

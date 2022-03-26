@@ -28,6 +28,8 @@ import { Express, ExpressColor } from "./express/express";
 import { Jest, JestColor } from "./jest/jest";
 import { Graphql, GraphqlColor } from "./graphql/graphql";
 import { Sass, SassColor } from "./sass/sass";
+import { CircleFull, CircleFullColor } from "./circle/circle";
+import { CircleDot, CircleDotColors } from "./circle-dot/circle-dot";
 
 export const Icons = {
   Lock,
@@ -89,5 +91,9 @@ export const Icons = {
   Graphql,
   GraphqlColor,
   Sass,
-  SassColor
+  SassColor,
+  CircleFull,
+  CircleFullColor,
+  CircleDot,
+  CircleDotColors
 };
