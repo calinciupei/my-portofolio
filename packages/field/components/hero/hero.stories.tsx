@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Hero, HeroClick } from "./hero";
 import { actions } from "@storybook/addon-actions";
 
-import heroImage from "../../__mocks__/cc-portfolio.png";
-
 const salute = "Hi <span>👋</span>,";
 const name = "It’s Călin,";
 const paragraph =
@@ -42,6 +40,10 @@ export default {
     buttonLabel: {
       defaultValue: buttonLabel,
       control: { type: "text" }
+    },
+    imgSrc: {
+      defaultValue: "cc-portfolio.png",
+      control: { type: "text" }
     }
   }
 } as ComponentMeta<typeof Hero>;
@@ -60,6 +62,6 @@ export const base: ComponentStory<typeof Hero> = ({ ...props }) => (
       justifyContent: "center"
     }}
   >
-    <Hero imgSrc={heroImage} {...props} onClick={() => {}} {...handleClick} />
+    <Hero {...props} onClick={() => {}} {...handleClick} />
   </div>
 );
