@@ -1,5 +1,5 @@
 import i18next from "i18next";
-import { TranslationsKey } from "../trasnlations/key";
+import { TranslationsKey } from "../translations/key";
 
 type TranslateArguments = {
   key: keyof TranslationsKey;

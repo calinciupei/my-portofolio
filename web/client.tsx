@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// ts-ignore
+/* eslint-disable @typescript-eslint/no-floating-promises, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires */
+// @ts-nocheck
 import React, { FunctionComponent } from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
@@ -7,7 +7,7 @@ import i18next from "i18next";
 import createStore, { StoreOptions } from "@crew/store";
 import { historyListener, urlMiddleware } from "./router";
 import { ENDPOINTS } from "./config/endpoints";
-import translationsEn from "./trasnlations/en.json";
+import translationsEn from "./translations/en.json";
 
 i18next.init({
   lng: "en",
@@ -23,19 +23,16 @@ i18next.init({
 });
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-let App = require("./connects/connect-app/connect-app").default;
+let App = require("./src/connect-app/connect-app").default;
 
 // Grab the state from a global variable injected into the server-generated HTML
-// @ts-expect-error
 const preloadedState = { ...window.__PRELOADED_STATE__ };
 
 // Allow the passed state to be garbage-collected
-// @ts-expect-error
 delete window.__PRELOADED_STATE__;
 
 const STORE: StoreOptions = {
   preloadedState,
-  // @ts-expect-error
   compose: window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__,
   middleware: [urlMiddleware]
 };
@@ -55,9 +52,8 @@ render(<Root />, rootElement);
 // ts-ignore
 if (module.hot) {
   // ts-ignore
-  module.hot.accept("./connects/connect-app/connect-app", (): void => {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    App = require("./connects/connect-app/connect-app").default;
+  module.hot.accept("./src/connect-app/connect-app", (): void => {
+    App = require("./src/connect-app/connect-app").default;
     render(<Root />, document.getElementById("root"));
   });
 }

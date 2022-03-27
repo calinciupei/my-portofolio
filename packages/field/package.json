@@ -11,6 +11,7 @@
     "stylelint": "stylelint components/**/*.css",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:coverage:branch": "jest --changedSince origin/main --coverage --coverageThreshold='{\"global\": {\"branches\": \"0\",\"functions\": \"0\",\"line\": \"0\"}}'",
     "type:check": "tsc"
   },
   "devDependencies": {
