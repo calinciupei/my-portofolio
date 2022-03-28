@@ -9,3 +9,4 @@ export * from "./components/contact-section/contact-section";
 export * from "./components/skills-experience/skills-experience";
 export * from "./components/progress-line/progress-line";
 export * from "./components/logo/logo";
+export * from "./components/bullets-navigation/bullets-navigation";

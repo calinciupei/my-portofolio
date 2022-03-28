@@ -45,7 +45,7 @@ export const BulletNavigation: FunctionComponent<BulletNavigationProps> = ({
 
   const renderScreen = (): JSX.Element => (
     <div className={styles.img}>
-      <img width={"100%"} src={imageSrc} alt={imageAlt} />
+      <img height={"100%"} width={"100%"} src={imageSrc} alt={imageAlt} />
     </div>
   );
 

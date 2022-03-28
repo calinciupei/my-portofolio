@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf ./../public",
     "copy:assets": "yarn clean && copyfiles -f -a assets/** ./../public",
-    "build": "yarn copy:assets &&   webpack --config ./webpack/webpack.prod.js",
+    "build": "yarn copy:assets && webpack --config ./webpack/webpack.prod.js",
     "eslint": "eslint -c ../.eslintrc.js --ignore-path ../.eslintignore --ext js,ts,tsx,jsx ./",
     "stylelint": "stylelint connects/**/*.css",
     "lint": "yarn eslint && yarn stylelint",
