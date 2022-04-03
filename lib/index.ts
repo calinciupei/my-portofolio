@@ -1,8 +1,9 @@
 import { app } from "./controller";
 
-const PORT = process.env.PORT || 9999;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Liste on port ${PORT}`);
 });
 

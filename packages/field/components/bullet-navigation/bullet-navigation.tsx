@@ -79,6 +79,7 @@ export const BulletNavigation: FunctionComponent<BulletNavigationProps> = ({
           onMouseLeave={handleMouseOut}
           onFocus={handleFocus}
           onBlur={handleFocus}
+          aria-label={section}
         >
           {(isHovered || isFullCircle) && <CircleFull color={CircleFullColor.Carbon} />}
           {!isHovered && !isFullCircle && <CircleDot color={CircleDotColors.Carbon} />}

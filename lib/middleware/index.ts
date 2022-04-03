@@ -1,4 +1,4 @@
 import { ErrorHandler } from "./error";
-import { NotFoundHandler } from "./notFound";
+import { NotFoundHandler } from "./not-found";
 
 export { ErrorHandler, NotFoundHandler };

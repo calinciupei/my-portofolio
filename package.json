@@ -22,9 +22,9 @@
     "start": "yarn workspace @cc/lib start",
     "start:local": "yarn workspace @cc/lib start:local",
     "start:client:local": "yarn workspace @crew/web start:local",
-    "functions:serve": "yarn workspace @firebase/functions serve",
+    "functions:build": "yarn workspace @firebase/functions build",
     "functions:hosting": "yarn workspace @firebase/functions hosting",
-    "functions:build": "yarn workspace @firebase/functions build"
+    "functions:serve": "yarn workspace @firebase/functions serve"
   },
   "dependencies": {
     "firebase-admin": "^10.0.2",

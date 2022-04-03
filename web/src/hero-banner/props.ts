@@ -1,6 +1,6 @@
 import { DispatchProps } from "./map-state-to-props";
 
-export type OwnProps = Record<string, unknown>;
+export type OwnProps = Record<string, never>;
 
 export type StateProps = {
   heroProps: {
@@ -12,6 +12,6 @@ export type StateProps = {
     buttonLabel: string;
     imgSrc: string;
   };
-} & OwnProps;
+};
 
 export type ComponentProps = StateProps & DispatchProps;

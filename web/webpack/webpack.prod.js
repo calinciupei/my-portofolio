@@ -94,7 +94,9 @@ module.exports = function () {
           NODE_ENV: JSON.stringify("production")
         }
       }),
-      new WebpackManifestPlugin(),
+      new WebpackManifestPlugin({
+        publicPath: ""
+      }),
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: "./index.html",

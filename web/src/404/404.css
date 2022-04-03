@@ -7,7 +7,7 @@
   padding-top: var(--header-height);
 }
 
-h1 {
+.title {
   margin-right: var(--spacing-4);
   padding: var(--spacing-1) var(--spacing-4);
 

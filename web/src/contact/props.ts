@@ -1,6 +1,6 @@
 import { DispatchProps } from "./map-sate-to-props";
 
-export type OwnProps = Record<string, unknown>;
+export type OwnProps = Record<string, never>;
 
 export type StateProps = {
   contact: {
@@ -9,6 +9,6 @@ export type StateProps = {
     text: string;
     label: string;
   };
-} & OwnProps;
+};
 
 export type ComponentProps = StateProps & DispatchProps;

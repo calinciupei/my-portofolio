@@ -20,7 +20,8 @@ function mapStateProps(state: InitialState): ConnectHelmetProps {
 
 const ConnectHelmet: FunctionComponent<ConnectHelmetProps> = ({ path }) => {
   const title = PAGE_NAMES[path];
-  const description = "";
+  const description =
+    "Hi I'm Calin Ciupei a front end developer specializing in building exceptional web experiences and occasionally designing.";
 
   return (
     <Helmet>

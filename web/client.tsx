@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-floating-promises, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires */
 // @ts-nocheck
 import React, { FunctionComponent } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import i18next from "i18next";
 import createStore, { StoreOptions } from "@crew/store";
@@ -48,12 +48,15 @@ const Root: FunctionComponent = () => (
   </Provider>
 );
 
-render(<Root />, rootElement);
+const wrapper = createRoot(rootElement);
+wrapper.render(<Root />);
 // ts-ignore
 if (module.hot) {
   // ts-ignore
   module.hot.accept("./src/connect-app/connect-app", (): void => {
     App = require("./src/connect-app/connect-app").default;
-    render(<Root />, document.getElementById("root"));
+    const root = createRoot(document.getElementById("root"));
+
+    root.render(<Root />);
   });
 }

@@ -1,6 +1,6 @@
 import { DispatchProps } from "./map-state-to-props";
 
-export type OwnProps = Record<string, unknown>;
+export type OwnProps = Record<string, never>;
 
 export type StateProps = {
   socials: {
@@ -11,6 +11,6 @@ export type StateProps = {
     github: string;
     offsetTop: number;
   };
-} & OwnProps;
+};
 
 export type ComponentProps = StateProps & DispatchProps;

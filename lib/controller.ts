@@ -16,9 +16,9 @@ app.use(
 app.use(cors());
 app.use(express.json());
 
-app.use("/", IndexRouter);
+app.use("", IndexRouter);
 
-app.use(express.static(join(__dirname, "../dist")));
+app.use(express.static(join(__dirname, "../../public")));
 app.use("/articles", ArticlesRouter);
 app.use("/image", ImageRouter);
 

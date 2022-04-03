@@ -38,6 +38,6 @@ export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState
   };
 };
 
-export type DispatchProps = Record<string, unknown>;
+export type DispatchProps = Record<string, never>;
 
 export const mapDispatchProps: DispatchProps = {};
