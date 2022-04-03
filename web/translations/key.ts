@@ -31,4 +31,5 @@ export type TranslationsKey = {
   "I18N.EXPERIENCE": string;
   "I18N.CONTACT": string;
   "I18N.RESUME": string;
+  "I18N.404": string;
 };

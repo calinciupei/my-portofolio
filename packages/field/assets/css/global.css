@@ -13,7 +13,7 @@
   --header-mobile-height: 68px;
   --box-shadow: rgb(9 30 66 / 25%) 0 4px 8px -2px, rgb(9 30 66 / 8%) 0 0 0 1px;
   --feather-to-bottom: linear-gradient(to bottom, rgb(255 255 255 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
-  --header-height: 78px;
+  --header-height: 54px;
 }
 
 :global(html) {

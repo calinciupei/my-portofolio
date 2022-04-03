@@ -1,0 +1,14 @@
+import { MapStateToProps } from "react-redux";
+import { InitialState } from "@crew/types";
+import { StateProps, ComponentProps } from "./props";
+import { i18n } from "../../helpers/i18n";
+
+export const mapStateToProps: MapStateToProps<StateProps, ComponentProps, InitialState> = (): StateProps => {
+  return {
+    content: i18n({ key: "I18N.404" })
+  };
+};
+
+export type DispatchProps = Record<string, unknown>;
+
+export const mapDispatchProps: DispatchProps = {};

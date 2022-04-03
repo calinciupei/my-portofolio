@@ -34,9 +34,6 @@
   --spacing--14: calc(var(--spacing-multiplier) * -14);
   --spacing--35: calc(var(--spacing-multiplier) * -35);
 
-  /* GLOBAL HEIGHTS and WIDTHS */
-  --header-height: 80px;
-
   /* GUTTER */
   --gutter-1: 1px;
 }

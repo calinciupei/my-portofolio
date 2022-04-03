@@ -16,6 +16,13 @@ const Home = React.lazy(
     }>
 );
 
+const FourZeroFour = React.lazy(
+  () =>
+    import(/* webpackChunkName: "404-page" */ "../src/404") as unknown as Promise<{
+      default: ComponentType<ReactNode>;
+    }>
+);
+
 const routes = (): UniversalRouter =>
   new UniversalRouter(
     [
@@ -32,7 +39,11 @@ const routes = (): UniversalRouter =>
     ],
     {
       errorHandler() {
-        return <>Oops! Something went wrong</>;
+        return (
+          <Suspense fallback={<>Loading....</>}>
+            <FourZeroFour />
+          </Suspense>
+        );
       }
     }
   );

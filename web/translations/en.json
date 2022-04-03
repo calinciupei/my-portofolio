@@ -30,5 +30,6 @@
   "I18N.ABOUT": "About",
   "I18N.EXPERIENCE": "Experience",
   "I18N.CONTACT": "Contact",
-  "I18N.RESUME": "Resume"
+  "I18N.RESUME": "Resume",
+  "I18N.404": "Sorry, we couldn&apos;t find that page."
 }
