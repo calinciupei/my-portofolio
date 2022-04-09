@@ -102,6 +102,11 @@ module.exports = function () {
         template: "./index.html",
         chunks: ["app"]
       }),
+      new HtmlWebpackPlugin({
+        filename: "404.html",
+        template: "./404.html",
+        chunks: ["app"]
+      }),
       new HtmlWebpackInjector(),
       new CompressionGzipPlugin({
         test: /\.(js|css|svg|png)$/,
