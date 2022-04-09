@@ -45,13 +45,13 @@ export const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
     <div className={styles.menu} data-testid="bottom-navigation">
       <ul className={styles.list}>
         <li>
-          <a className={styles.link} href={instagram} target="_blank" rel="noreferrer">
-            <Instagram color={InstagramColor.Carbon} />
+          <a className={styles.link} href={linkedin} target="_blank" rel="noreferrer">
+            <Linkedin color={LinkedinColor.carbon} />
           </a>
         </li>
         <li>
-          <a className={styles.link} href={linkedin} target="_blank" rel="noreferrer">
-            <Linkedin color={LinkedinColor.carbon} />
+          <a className={styles.link} href={instagram} target="_blank" rel="noreferrer">
+            <Instagram color={InstagramColor.Carbon} />
           </a>
         </li>
         <li className={styles.menuItem}>
