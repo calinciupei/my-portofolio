@@ -15,8 +15,8 @@ const ConnectHome: FunctionComponent<ComponentProps> = ({ routeHash, offsetTop, 
   const experiencePosition = refExperience.current?.offsetTop || 0;
   const contactPosition = refContact.current?.offsetTop || 0;
   const [refOne, inViewOne] = useInView({ threshold: 0, delay: 100, trackVisibility: true });
-  const [refTwo, inViewTwo] = useInView({ threshold: 0.1, delay: 100, trackVisibility: true });
-  const [refThree, inViewThree] = useInView({ threshold: 0.2, delay: 100, trackVisibility: true });
+  const [refTwo, inViewTwo] = useInView({ threshold: 0, delay: 200, trackVisibility: true });
+  const [refThree, inViewThree] = useInView({ threshold: 0, delay: 300, trackVisibility: true });
 
   const bullets = [
     {
