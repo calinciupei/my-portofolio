@@ -14,8 +14,8 @@ export const mapStateToProps: MapStateToProps<StateProps, OwnProps, InitialState
   return {
     socials: {
       isOpened: isOpen,
-      github: "https://github.com/calinciupei",
       instagram: "https://www.instagram.com/ciupeicalin/",
+      github: "https://github.com/calinciupei",
       linkedin: "https://www.linkedin.com/in/calinciupei/",
       twitter: "https://twitter.com/calinciupei",
       offsetTop

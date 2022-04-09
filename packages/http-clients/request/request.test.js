@@ -16,7 +16,7 @@ describe("http-clients request.js", () => {
       axios.mockResolvedValueOnce({
         ok: true,
         status: 200,
-        json: jsonMock,
+        json: jsonMock
       });
 
       await get("https://test.url/");
@@ -25,9 +25,9 @@ describe("http-clients request.js", () => {
         method: "GET",
         url: "https://test.url/",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        data: {},
+        data: {}
       });
     });
   });
@@ -39,7 +39,7 @@ describe("http-clients request.js", () => {
       axios.mockResolvedValueOnce({
         ok: true,
         status: 200,
-        json: jsonMock,
+        json: jsonMock
       });
 
       await post("https://test.url/");
@@ -48,9 +48,9 @@ describe("http-clients request.js", () => {
         method: "POST",
         url: "https://test.url/",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        data: {},
+        data: {}
       });
     });
   });

@@ -75,12 +75,11 @@ module.exports = function () {
             }
           },
           extractComments: false
-        }),
-        new OptimizeCSSAssetsPlugin({})
+        })
       ],
-      runtimeChunk: "single",
       splitChunks: {
         chunks: "all",
+        chunks: "async",
         cacheGroups: {
           vendors: {
             test: /[\\/]node_modules[\\/](?!@crew)/
@@ -95,7 +94,8 @@ module.exports = function () {
         }
       }),
       new WebpackManifestPlugin({
-        publicPath: ""
+        publicPath: "",
+        basePath: ""
       }),
       new HtmlWebpackPlugin({
         filename: "index.html",

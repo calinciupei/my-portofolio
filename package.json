@@ -13,7 +13,7 @@
     "packages/**"
   ],
   "scripts": {
-    "build": "yarn build:functions && yarn build:client",
+    "build": "yarn build:client",
     "decrypt": "sh ./tools/decrypt_local.sh",
     "build:client": "yarn workspace @crew/web build",
     "build:lib": "yarn workspace @cc/lib build",

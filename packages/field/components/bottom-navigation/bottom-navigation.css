@@ -29,7 +29,7 @@
 }
 
 .menuItem {
-  margin-top: var(--spacing--7);
+  margin-top: var(--spacing-negative-7);
 }
 
 .link {

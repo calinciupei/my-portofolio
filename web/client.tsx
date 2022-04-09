@@ -49,7 +49,9 @@ const Root: FunctionComponent = () => (
 );
 
 const wrapper = createRoot(rootElement);
+
 wrapper.render(<Root />);
+
 // ts-ignore
 if (module.hot) {
   // ts-ignore

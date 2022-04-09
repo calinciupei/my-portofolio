@@ -24,7 +24,7 @@
   --spacing--4: calc(var(--spacing-multiplier) * -4);
   --spacing--5: calc(var(--spacing-multiplier) * -5);
   --spacing--6: calc(var(--spacing-multiplier) * -6);
-  --spacing--7: calc(var(--spacing-multiplier) * -7);
+  --spacing-negative-7: calc(var(--spacing-multiplier) * -7);
   --spacing--8: calc(var(--spacing-multiplier) * -8);
   --spacing--9: calc(var(--spacing-multiplier) * -9);
   --spacing--10: calc(var(--spacing-multiplier) * -10);

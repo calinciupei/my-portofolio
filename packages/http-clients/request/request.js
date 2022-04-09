@@ -8,9 +8,9 @@ async function request(requestConfig) {
       method: method,
       url,
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      data: data || {},
+      data: data || {}
     });
 
     return response.data;
@@ -23,7 +23,7 @@ async function get(url, config = {}) {
   return request({
     ...config,
     url,
-    method: "GET",
+    method: "GET"
   });
 }
 
@@ -31,7 +31,7 @@ async function post(url, config = {}) {
   return request({
     ...config,
     url,
-    method: "POST",
+    method: "POST"
   });
 }
 
