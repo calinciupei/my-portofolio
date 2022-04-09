@@ -43,11 +43,7 @@ export const BulletNavigation: FunctionComponent<BulletNavigationProps> = ({
     setIsHovered(false);
   };
 
-  const renderScreen = (): JSX.Element => (
-    <div className={styles.img}>
-      <img height={"100%"} width={"100%"} src={imageSrc} alt={imageAlt} />
-    </div>
-  );
+  const renderScreen = (): JSX.Element => <div className={styles.img}>{section}</div>;
 
   return (
     <StatefulTooltip

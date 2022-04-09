@@ -20,19 +20,19 @@ const ConnectHome: FunctionComponent<ComponentProps> = ({ routeHash, offsetTop, 
 
   const bullets = [
     {
-      isActive: window.scrollY < experiencePosition,
+      isActive: inViewOne,
       section: "#about",
       imageAlt: "Calin Ciupei Profile",
       imageSrc: "/about.jpg"
     },
     {
-      isActive: experiencePosition <= window.scrollY && window.scrollY < contactPosition,
+      isActive: inViewTwo,
       section: "#experience",
       imageAlt: "Calin Ciupei Profile",
       imageSrc: "/experience.jpg"
     },
     {
-      isActive: window.scrollY >= contactPosition,
+      isActive: inViewThree,
       section: "#contact",
       imageAlt: "Calin Ciupei Profile",
       imageSrc: "/contact.jpg"
@@ -71,30 +71,24 @@ const ConnectHome: FunctionComponent<ComponentProps> = ({ routeHash, offsetTop, 
       </div>
       <div id="homePage" className={styles.main}>
         <div ref={refHero} />
-        <section ref={refOne} className={styles.section}>
-          {inViewOne && (
-            <div className={styles.item}>
-              <HeroBanner />
-            </div>
-          )}
+        <section className={styles.section}>
+          <div ref={refOne} className={styles.item}>
+            {inViewOne && <HeroBanner />}
+          </div>
         </section>
 
         <div ref={refExperience} />
-        <section ref={refTwo} className={styles.section}>
-          {inViewTwo && (
-            <div className={styles.item}>
-              <Experience />
-            </div>
-          )}
+        <section className={styles.section}>
+          <div ref={refTwo} className={styles.item}>
+            {inViewTwo && <Experience />}
+          </div>
         </section>
 
         <div ref={refContact} />
-        <section ref={refThree} className={styles.section}>
-          {inViewThree && (
-            <div className={styles.contact}>
-              <Contact />
-            </div>
-          )}
+        <section className={styles.section}>
+          <div ref={refThree} className={styles.contact}>
+            {inViewThree && <Contact />}
+          </div>
         </section>
       </div>
     </>
