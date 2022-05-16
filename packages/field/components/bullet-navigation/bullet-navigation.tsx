@@ -8,20 +8,12 @@ export type BulletNavigationClick = (section: string) => void;
 export type BulletNavigationProps = {
   isActive: boolean;
   section: string;
-  imageSrc: string;
-  imageAlt: string;
   onClick?: BulletNavigationClick;
 };
 
 const { CircleFull, CircleFullColor, CircleDot, CircleDotColors } = Icons;
 
-export const BulletNavigation: FunctionComponent<BulletNavigationProps> = ({
-  isActive,
-  onClick,
-  section,
-  imageAlt,
-  imageSrc
-}) => {
+export const BulletNavigation: FunctionComponent<BulletNavigationProps> = ({ isActive, onClick, section }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isFullCircle, setIsFullCircle] = useState<boolean>(isActive);
 
