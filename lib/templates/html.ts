@@ -10,7 +10,7 @@ export default function template(assets: any, initialState: any): string {
     <html lang="en">
       <head>
         <meta charset="utf-8" />
-        <title>webapp seed</title>
+        <title>Calin Ciupei</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
         <base href="/">
         <link rel="icon" href="favicon.ico" type="image/x-icon">

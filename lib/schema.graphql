@@ -1,0 +1,104 @@
+scalar URN
+
+type Query {
+  Cards(
+    """
+    List of card
+    """
+    cardsURN: [URN!]!
+  ): [Items]
+
+  """
+  Search through articles
+  """
+  Search(
+    """
+    Query string to look for
+    """
+    query: String!
+  ): SearchResults!
+}
+
+interface Card {
+  urn: URN!
+}
+
+union Items = HelloCard | ArticlesCard
+
+type HelloCard implements Card {
+  """
+  Hello card URN
+  """
+  urn: URN!
+  """
+  List of texts
+  """
+  text: [String]
+}
+
+"""
+Search results
+"""
+type SearchResults {
+  """
+  Query string to look for
+  """
+  query: String!
+  """
+  Number if results found on current search
+  """
+  pageResults: Int!
+  """
+  Current page index
+  """
+  startIndex: Int!
+  # """
+  # Matched results
+  # """
+  # results: [SearchableItems]
+}
+
+# """
+# Items that can be search for
+# """
+# union SearchableItems = ArticleCard
+
+"""
+Represents a list of article cards
+"""
+type ArticlesCard implements Card {
+  """
+  Articles URN
+  """
+  urn: URN!
+  """
+  List of articles
+  """
+  articles: [ArticleCard]
+}
+
+"""
+Represents Card related to a article
+"""
+type ArticleCard {
+  """
+  Article id
+  """
+  id: Int!
+  """
+  Article name
+  """
+  name: String!
+  """
+  Article title
+  """
+  title: String!
+   """
+  Article title
+  """
+  subTitle: String!
+  """
+  Article content
+  """
+  content: String
+}
