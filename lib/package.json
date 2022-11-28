@@ -8,12 +8,21 @@
     "build": "tsc",
     "start": "node ../build/lib/index.js",
     "start:dev": "node --inspect ../build/lib/index.js",
-    "start:local": "ts-node -r ./index.ts"
+    "start:local": "ts-node -r ./index.ts",
+    "gen:schema": "graphql-codegen --config codegen.yml && eslint --fix ./gql-types.ts"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.10",
+    "@crew/types": "1.0.0",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-tools/graphql-file-loader": "^7.3.8",
+    "@graphql-tools/load": "^7.5.7",
+    "@graphql-tools/schema": "^8.3.7",
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
     "firebase-admin": "^10.0.1",
+    "graphql": "^16.3.0",
     "helmet": "^5.0.1",
     "jimp": "^0.16.1",
     "path": "^0.12.7",
@@ -22,8 +31,14 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/typescript": "2.4.8",
+    "@graphql-codegen/typescript-resolvers": "2.6.1",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/express-graphql": "^0.9.0",
+    "@types/graphql": "^14.5.0",
     "@types/node": "^17.0.10",
     "@types/uuid": "^8.3.4"
   }
