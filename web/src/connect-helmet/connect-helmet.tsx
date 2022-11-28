@@ -19,14 +19,14 @@ function mapStateProps(state: InitialState): ConnectHelmetProps {
 }
 
 const ConnectHelmet: FunctionComponent<ConnectHelmetProps> = ({ path }) => {
-  const title = PAGE_NAMES[path] || "Calin Ciupei";
+  const title = PAGE_NAMES[path];
   const description =
     "Hi I'm Calin Ciupei a front end developer specializing in building exceptional web experiences and occasionally designing.";
 
   return (
     <Helmet>
       <meta charSet="utf-8" />
-      <title> {`${title} | by calinciupei@gmail.com`}</title>
+      <title>{`Calin Ciupei | Front End Developer | ${title}`}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
     </Helmet>
