@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import COLORS from "../../assets/css/colors.css";
 import styles from "./color.css";
 
-/* eslint-disable no-undef */
 const style = getComputedStyle(document.body);
 
 type Palette = {

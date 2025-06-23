@@ -9,10 +9,10 @@ import { GQLContext } from "./../context";
 import { resolvers } from "../src/resolvers";
 
 const schemaPath = (): string => {
-  if (existsSync(join(__dirname, "./../../../lib/schema.graphql"))) {
-    return join(__dirname, "./../../../lib/schema.graphql");
+  if (existsSync(join(__dirname, "./../schema.graphql"))) {
+    return join(__dirname, "./../schema.graphql");
   } else {
-    return join(__dirname, "./../../../../lib/schema.graphql");
+    return join(__dirname, "./../schema.graphql");
   }
 };
 

@@ -36,7 +36,7 @@ module.exports = function () {
             {
               loader: "babel-loader",
               options: {
-                configFile: path.resolve("babel.config.js")
+                configFile: path.resolve("./babel.config.js")
               }
             }
           ]

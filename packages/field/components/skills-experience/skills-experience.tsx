@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, JSX } from "react";
 import classnames from "classnames";
 import DOMPurify from "dompurify";
 import { StatefulTooltip } from "baseui/tooltip";
@@ -83,7 +83,7 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = ({ ski
     return `${animationDelay()}ms`;
   };
 
-  const renderIcon = (icon: string | IconsType): JSX.Element => {
+  const renderIcon = (icon: IconsType): JSX.Element => {
     switch (icon) {
       case IconsType.Html5:
         return <Html5 color={Html5Color.Carbon} />;
@@ -161,7 +161,7 @@ export const SkillsExperience: FunctionComponent<SkillsExperienceProps> = ({ ski
             <div key={icon} className={`${styles.icon} ${styles.box}`} style={{ animationDelay: getDelay() }}>
               <StatefulTooltip content={renderTooltipTitle(title)} placement="bottom" showArrow returnFocus>
                 <a href={url} target={"_blank"} rel="noreferrer" className={styles.link}>
-                  {renderIcon(icon)}
+                  {renderIcon(icon as IconsType)}
                 </a>
               </StatefulTooltip>
             </div>

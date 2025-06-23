@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, JSX } from "react";
 import { Icons } from "../icons/icons";
 
 import styles from "./bottom-navigation.css";

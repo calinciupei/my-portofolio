@@ -1,0 +1,69 @@
+import { rules } from 'eslint-config-prettier';
+
+/** @type { import('stylelint').Config } */
+export default {
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order",
+  ],
+  // "plugins": [
+  //   // "stylelint-declaration-use-variable",
+  //   "stylelint-color-no-non-variables",
+  //   "stylelint-no-unused-selectors",
+  //   "stylelint-value-no-unknown-custom-properties",
+  //   "stylelint-order",
+  //   "stylelint-config-rational-order/plugin"
+  // ],
+  // rules: {}
+  // "rules": {
+  //   "csstools/value-no-unknown-custom-properties": null,
+  //   "declaration-block-no-duplicate-properties": true,
+  //   "declaration-empty-line-before": null,
+  //   // "dczajkowski/color-no-non-variables": true,
+  //   "color-named": "never",
+  //   "scale-unlimited/declaration-strict-value": [
+  //     [
+  //       "background-color",
+  //       "color",
+  //       "fill",
+  //       "font-size",
+  //       "line-height",
+  //       "margin",
+  //       "margin-left",
+  //       "margin-right",
+  //       "margin-top",
+  //       "margin-bottom",
+  //       {
+  //         "ignoreValues": [
+  //           "/0/",
+  //           "transparent",
+  //           "auto"
+  //         ]
+  //       }
+  //     ]
+  //   ],
+  //   "plugin/no-unused-selectors": true,
+  //   "property-no-unknown": [
+  //     true,
+  //     {
+  //       "ignoreProperties": ["composes", "compose-with"]
+  //     }
+  //   ],
+  //   "property-disallowed-list": ["font-size", "font-weight", "line-height"],
+  //   "selector-pseudo-class-no-unknown": [
+  //     true,
+  //     {
+  //       "ignorePseudoClasses": ["export", "import", "global", "local", "external"]
+  //     }
+  //   ],
+  //   "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+  //   "order/properties-order": [],
+  //   "plugin/rational-order": [
+  //     true, 
+  //     {
+  //       "border-in-box-model": false,
+  //       "empty-line-between-groups": true
+  //     }
+  //   ]
+  // }
+};

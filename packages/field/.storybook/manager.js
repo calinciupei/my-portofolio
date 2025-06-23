@@ -1,14 +1,14 @@
-import { addons } from '@storybook/addons';
+import { addons } from "@storybook/addons";
 
 addons.setConfig({
   isFullscreen: false,
   showNav: true,
   showPanel: true,
-  panelPosition: 'bottom',
+  panelPosition: "bottom",
   sidebarAnimations: true,
   enableShortcuts: true,
   isToolShown: true,
   selectedPanel: undefined,
-  initialActive: 'sidebar',
-  showRoots: false,
+  initialActive: "sidebar",
+  showRoots: falses
 });

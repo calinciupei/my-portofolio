@@ -1,5 +1,6 @@
 {
   "packages": ["packages/*", "web", "lib"],
   "version": "independent",
-  "nmpClient": "yarn"
+  "nmpClient": "yarn",
+  "type": "module"
 }

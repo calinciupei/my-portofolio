@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useCallback, useEffect, useState } from "react";
+import React, { FunctionComponent, JSX, useCallback, useEffect, useState } from "react";
 import { StatefulTooltip } from "baseui/tooltip";
 import { Icons } from "../icons/icons";
 import styles from "./bullet-navigation.css";
@@ -22,7 +22,9 @@ export const BulletNavigation: FunctionComponent<BulletNavigationProps> = ({ isA
   }, [isActive]);
 
   const handleClick = useCallback(() => {
-    onClick && onClick(section);
+    if (onClick) {
+      onClick(section);
+    }
   }, [onClick, section]);
 
   const handleMouseOver = (): void => {
@@ -56,7 +58,6 @@ export const BulletNavigation: FunctionComponent<BulletNavigationProps> = ({ isA
           }
         }
       }}
-      // eslint-disable-next-line jsx-a11y/no-autofocus
       autoFocus
     >
       <div className={styles.bullet}>

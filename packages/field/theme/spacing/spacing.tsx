@@ -6,7 +6,6 @@ type RemInPx = {
   [name: string]: number;
 };
 
-/* eslint-disable no-undef */
 const style = getComputedStyle(document.body);
 const remInPx: RemInPx = {
   spacing1: 4,
